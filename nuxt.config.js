@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -55,5 +57,23 @@ export default {
 
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL,
+  },
+
+  generate: {
+    fallback: true,
+    interval: 100,
+    routes() {
+      return axios.get(process.env.API_URL + '/posts?_embed').then((posts) => {
+        return posts.data.map((post) => {
+          return {
+            route: `/posts/${post.id}`,
+            payload: {
+              posts: posts.data,
+              currentPost: post,
+            },
+          }
+        })
+      })
+    },
   },
 }
