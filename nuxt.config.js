@@ -13,104 +13,7 @@ export default {
         name: 'description',
         content: 'NISLAB',
       },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'NISLAB' },
-      { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:url', property: 'og:url', content: '' },
-      { hid: 'og:title', property: 'og:title', content: 'NISLAB' },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: 'NISLAB',
-      },
-      // {
-      //   hid: 'og:image',
-      //   property: 'og:image',
-      //   content: '/static/twitter-card.png',
-      // },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'apple-mobile-web-app-capable', content: 'yes' },
     ],
-    // link: [
-    //   {
-    //     rel: 'apple-touch-icon',
-    //     sizes: '180x180',
-    //     href: '/static/apple-touch-icon.png',
-    //   },
-    //   {
-    //     rel: 'icon',
-    //     sizes: '16x16',
-    //     type: 'image/png',
-    //     href: '/static/favicon-16x16.png',
-    //   },
-    //   {
-    //     rel: 'icon',
-    //     sizes: '32x32',
-    //     type: 'image/png',
-    //     href: '/static/favicon-32x32.png',
-    //   },
-    // pwa splash screens
-    // Doc: https://appsco.pe/developer/splash-screens
-    //     {
-    //       href: splashscreens + 'iphone5_splash.png',
-    //       media:
-    //         '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)',
-    //       rel: 'apple-touch-startup-image',
-    //     },
-    //     {
-    //       href: splashscreens + 'iphone6_splash.png',
-    //       media:
-    //         '(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)',
-    //       rel: 'apple-touch-startup-image',
-    //     },
-    //     {
-    //       href: splashscreens + 'iphoneplus_splash.png',
-    //       media:
-    //         '(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)',
-    //       rel: 'apple-touch-startup-image',
-    //     },
-    //     {
-    //       href: splashscreens + 'iphonex_splash.png',
-    //       media:
-    //         '(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)',
-    //       rel: 'apple-touch-startup-image',
-    //     },
-    //     {
-    //       href: splashscreens + 'iphonexr_splash.png',
-    //       media:
-    //         '(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)',
-    //       rel: 'apple-touch-startup-image',
-    //     },
-    //     {
-    //       href: splashscreens + 'iphonexsmax_splash.png',
-    //       media:
-    //         '(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)',
-    //       rel: 'apple-touch-startup-image',
-    //     },
-    //     {
-    //       href: splashscreens + 'ipad_splash.png',
-    //       media:
-    //         '(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)',
-    //       rel: 'apple-touch-startup-image',
-    //     },
-    //     {
-    //       href: splashscreens + 'ipadpro1_splash.png',
-    //       media:
-    //         '(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)',
-    //       rel: 'apple-touch-startup-image',
-    //     },
-    //     {
-    //       href: splashscreens + 'ipadpro2_splash.png',
-    //       media:
-    //         '(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)',
-    //       rel: 'apple-touch-startup-image',
-    //     },
-    //     {
-    //       href: splashscreens + 'ipadpro3_splash.png',
-    //       media:
-    //         '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)',
-    //       rel: 'apple-touch-startup-image',
-    //     },
-    //   ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -142,24 +45,6 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
-
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  // pwa: {
-  //   manifest: {
-  //     lang: 'ja',
-  //     name: 'NISPLAN',
-  //     short_name: 'NISPLAN',
-  //     description: 'NISPLAN',
-  //     background_color: '#ffffff',
-  //     theme_color: '#e2844a',
-  //     display: 'standalone',
-  //     orientation: 'portrait',
-  //   },
-  // },
-
-  // icon: {
-  //   iconFileName: '/static/manifestIcon.png',
-  // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
