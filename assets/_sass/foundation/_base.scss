@@ -29,7 +29,7 @@ body {
   font-feature-settings: 'pkna';
   color: $primary-text-color;
   word-break: break-all;
-  background-color: $main-color;
+  background-color: $base-color;
   text-rendering: optimizeLegibility;
 
   :lang(en) {
