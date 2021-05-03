@@ -1,8 +1,10 @@
 <template>
   <section class="card">
-    <h2 class="card__title">{{ title }}</h2>
-    <p class="card__date">{{ date }}</p>
-    <img :src="img" alt="" class="card__img" />
+    <nuxt-link :to="`/posts/${id}`">
+      <h2 class="card__title">{{ title }}</h2>
+      <p class="card__date">{{ date }}</p>
+      <img :src="img" alt="" class="card__img" />
+    </nuxt-link>
   </section>
 </template>
 
