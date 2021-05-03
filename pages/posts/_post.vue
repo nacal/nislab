@@ -52,8 +52,10 @@ export default {
 
 <style lang="scss">
 .content {
-  p {
-    margin-bottom: 1em;
+  h2 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
   }
 
   a {
@@ -63,6 +65,20 @@ export default {
 
   li {
     line-height: 2em;
+  }
+
+  figure,
+  img {
+    width: 640px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  h2,
+  p,
+  ol,
+  figure {
+    margin-bottom: 1rem;
   }
 }
 </style>
