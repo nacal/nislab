@@ -4,7 +4,7 @@
       <swiper-slide v-for="(image, index) in images" :key="index">
         <img
           :src="require(`~/assets/images/${image}`)"
-          alt=""
+          alt="NISLABイメージ画像"
           class="hero__image"
         />
       </swiper-slide>
@@ -16,6 +16,7 @@
         span
       }}</span>
     </h2>
+    <nuxt-link to="#about" class="hero__scroll">Scroll</nuxt-link>
   </div>
 </template>
 
@@ -90,6 +91,53 @@ export default {
   &__labName {
     font-size: 4rem;
     line-height: 1em;
+  }
+
+  &__scroll {
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    width: 1.5rem;
+    height: 200px;
+    overflow: hidden;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.6));
+    writing-mode: vertical-lr;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      height: 100px;
+      content: '';
+      background: #fff;
+      animation: scrollDown 3s cubic-bezier(1, 0, 0, 1) infinite;
+
+      @keyframes scrollDown {
+        0% {
+          transform: scale(1, 0);
+          transform-origin: 0 0;
+        }
+        50% {
+          transform: scale(1, 1);
+          transform-origin: 0 0;
+        }
+        50.1% {
+          transform: scale(1, 1);
+          transform-origin: 0 100%;
+        }
+        100% {
+          transform: scale(1, 0);
+          transform-origin: 0 100%;
+        }
+      }
+    }
   }
 }
 </style>
