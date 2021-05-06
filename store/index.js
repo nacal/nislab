@@ -8,6 +8,12 @@ export const mutations = {
   },
 }
 
+export const getters = {
+  indexPosts: (state) => (index) => {
+    return state.posts.slice(0, index)
+  },
+}
+
 export const actions = {
   async getPosts({ commit }) {
     await this.$axios
