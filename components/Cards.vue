@@ -19,7 +19,7 @@
 export default {
   computed: {
     posts() {
-      return this.$store.state.posts
+      return this.$store.getters.indexPosts(6)
     },
   },
 }
