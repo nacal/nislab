@@ -3,7 +3,6 @@
     <Hero />
     <About />
     <Topics />
-    <Cards />
   </div>
 </template>
 
