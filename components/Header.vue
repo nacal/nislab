@@ -20,6 +20,7 @@ export default {}
   align-items: center;
   justify-content: space-between;
   width: 90%;
+  max-width: 1200px;
   height: 120px;
   padding: 0 2.5rem;
   background-color: #fff;
