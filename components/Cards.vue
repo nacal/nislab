@@ -17,9 +17,23 @@
 
 <script>
 export default {
+  props: {
+    number: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
+    filter: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
   computed: {
     posts() {
-      return this.$store.getters.indexPosts(6)
+      return this.filter
+        ? this.$store.getters.indexPosts(6)
+        : this.$store.state.posts
     },
   },
 }
