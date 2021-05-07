@@ -1,6 +1,6 @@
 <template>
   <Section class="topics" :bg="`#ddd`">
-    <Title :title="`Topics`" />
+    <Title :title="`New Topics`" />
     <Cards class="topics__cards" :number="6" :filter="true" />
     <div class="topics__button">
       <MoreButton :link-to="`/about`" />
