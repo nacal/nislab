@@ -18,6 +18,7 @@ export default {
 .title {
   position: relative;
   z-index: 1;
+  font-family: $font-set-en;
   font-size: 2rem;
   font-weight: bold;
   text-align: center;

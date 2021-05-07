@@ -32,6 +32,7 @@ export default {
   & span {
     position: relative;
     z-index: 1;
+    font-family: $font-set-en;
   }
 
   &::before {

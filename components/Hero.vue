@@ -44,6 +44,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100vh;
+  font-family: $font-set-en;
 
   &__filter {
     position: absolute;
