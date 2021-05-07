@@ -1,13 +1,33 @@
 <template>
-  <section class="section">
+  <section class="section" :style="styles">
     <slot></slot>
   </section>
 </template>
 
+<script>
+export default {
+  props: {
+    bg: {
+      type: String,
+      required: false,
+      default: '#fff',
+    },
+  },
+  computed: {
+    styles() {
+      return {
+        '--color': this.bg,
+      }
+    },
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .section {
-  width: 90%;
+  max-width: 100%;
   padding: 16rem 0;
   margin: 0 auto;
+  background-color: var(--color);
 }
 </style>
