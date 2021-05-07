@@ -17,6 +17,7 @@ export default {
 <style lang="scss" scoped>
 .title {
   position: relative;
+  z-index: 1;
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
