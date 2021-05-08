@@ -32,10 +32,6 @@ body {
   background-color: $base-color;
   text-rendering: optimizeLegibility;
 
-  :lang(en) {
-    font-family: $font-set-en;
-  }
-
   &::before {
     position: fixed;
     top: 0;

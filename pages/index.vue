@@ -1,9 +1,18 @@
 <template>
   <div>
-    <Cards />
+    <Hero />
+    <About />
+    <Topics />
   </div>
 </template>
 
 <script>
-export default {}
+import { About, Topics } from '~/components/topPage/index'
+
+export default {
+  components: {
+    About,
+    Topics,
+  },
+}
 </script>
