@@ -4,6 +4,8 @@
     <main class="l-main">
       <Nuxt />
     </main>
+    <ReturnTop />
+    <Footer />
   </div>
 </template>
 
