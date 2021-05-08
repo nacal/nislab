@@ -25,7 +25,7 @@ export default {}
 .about {
   &__text {
     width: 720px;
-    max-width: 100%;
+    max-width: 90%;
     margin: 0 auto;
     margin-top: 8rem;
   }
