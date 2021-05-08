@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     scrollWindow() {
-      const top = window.innerHeight
+      const top = window.innerHeight - 80
       this.scroll = window.scrollY
       if (top <= this.scroll) {
         this.scrolledLayout = true
