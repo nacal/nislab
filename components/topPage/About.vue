@@ -1,5 +1,5 @@
 <template>
-  <Section>
+  <Section id="about">
     <Title :title="`About NISLAB`" />
     <p class="about__text">
       私たちネットワーク情報システム研究室（佐藤研究室）は，身の回りの家電や自動車などの組込みシステムからスマートフォンやクラウドまで，モノのインターネット（IoT:
