@@ -21,7 +21,7 @@ export default {
         'about',
         'research',
         'topics',
-        'publication',
+        'publications',
         'members',
         'contact',
       ],

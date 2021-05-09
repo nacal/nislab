@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header class="l-header" />
-    <main class="l-main">
+    <main class="l-main" :class="{ lower: lowerPage }">
       <Nuxt />
     </main>
     <ReturnTop />
@@ -11,7 +11,20 @@
 
 <script>
 export default {
+  data() {
+    return {
+      lowerPage: false,
+      path: this.$route.path,
+    }
+  },
+  watch: {
+    $route(to) {
+      this.path = to.path
+      to.path === '/' ? (this.lowerPage = false) : (this.lowerPage = true)
+    },
+  },
   mounted() {
+    this.path === '/' ? (this.lowerPage = false) : (this.lowerPage = true)
     this.$store.dispatch('getPosts')
   },
 }
@@ -27,5 +40,9 @@ export default {
 }
 .l-main {
   min-height: 100vh;
+
+  &.lower {
+    margin-top: 60px;
+  }
 }
 </style>
