@@ -1,5 +1,5 @@
 <template>
-  <section class="post">
+  <Section class="post">
     <div class="post__header">
       <h2 class="post__title">{{ post.title.rendered }}</h2>
       <p class="post__date">{{ $moment(post.date).format('YYYY-MM-DD') }}</p>
@@ -7,7 +7,7 @@
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div class="post__content content" v-html="post.content.rendered" />
     <nuxt-link to="/">back</nuxt-link>
-  </section>
+  </Section>
 </template>
 
 <script>
@@ -16,7 +16,7 @@ import axios from 'axios'
 export default {
   async asyncData({ $config, params }) {
     return await axios
-      .get(`${$config.apiUrl}/posts/${params.post}?_embed`)
+      .get(`${$config.apiUrl}/posts/${params.topic}?_embed`)
       .then((res) => {
         return {
           post: res.data,

@@ -82,7 +82,7 @@ export default {
       return axios.get(process.env.API_URL + '/posts?_embed').then((posts) => {
         return posts.data.map((post) => {
           return {
-            route: `/posts/${post.id}`,
+            route: `/topics/${post.id}`,
             payload: {
               posts: posts.data,
               currentPost: post,
