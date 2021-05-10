@@ -1,6 +1,6 @@
 <template>
   <section class="card">
-    <nuxt-link :to="`/posts/${id}`" class="card__link">
+    <nuxt-link :to="`/topics/${id}`" class="card__link">
       <div class="card__header">
         <h2 class="card__title">{{ title }}</h2>
         <p class="card__date">{{ date }}</p>
