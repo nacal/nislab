@@ -1,7 +1,8 @@
 <template>
   <Section class="post">
     <div class="post__header">
-      <h2 class="post__title">{{ post.title.rendered }}</h2>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <h2 class="post__title" v-html="post.title.rendered" />
       <p class="post__date">{{ $moment(post.date).format('YYYY-MM-DD') }}</p>
     </div>
     <!-- eslint-disable-next-line vue/no-v-html -->
