@@ -34,7 +34,7 @@ export default {
   computed: {
     posts() {
       return this.filter
-        ? this.$store.getters.indexPosts(6)
+        ? this.$store.getters.indexPosts(this.number)
         : this.$store.state.posts
     },
   },
