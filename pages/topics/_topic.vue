@@ -32,7 +32,7 @@ export default {
 
 <style lang="scss" scoped>
 .post {
-  width: 80%;
+  width: 640px;
   margin: 1rem auto;
 
   &__header {
