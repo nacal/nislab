@@ -7,7 +7,6 @@
     </div>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div class="post__content content" v-html="post.content.rendered" />
-    <nuxt-link to="/">back</nuxt-link>
   </Section>
 </template>
 
@@ -33,6 +32,7 @@ export default {
 <style lang="scss" scoped>
 .post {
   width: 640px;
+  max-width: 90%;
   margin: 1rem auto;
 
   &__header {
