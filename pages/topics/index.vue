@@ -1,7 +1,7 @@
 <template>
   <Section>
     <Title :title="`Topics`" />
-    <Cards class="topics__cards" />
+    <Topics class="topics__cards" />
   </Section>
 </template>
 
