@@ -7,6 +7,7 @@
     </div>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div class="post__content content" v-html="post.content.rendered" />
+    <nuxt-link to="/topics" class="post__back">投稿一覧へ</nuxt-link>
   </Section>
 </template>
 
@@ -47,6 +48,19 @@ export default {
 
   &__content {
     margin-top: 2rem;
+  }
+
+  &__back {
+    width: 80px;
+    margin: 4rem auto 0;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      width: 100px;
+      color: #666;
+    }
   }
 }
 </style>
