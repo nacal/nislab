@@ -1,13 +1,14 @@
 <template>
-  <section class="post">
+  <Section class="post">
     <div class="post__header">
-      <h2 class="post__title">{{ post.title.rendered }}</h2>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <h2 class="post__title" v-html="post.title.rendered" />
       <p class="post__date">{{ $moment(post.date).format('YYYY-MM-DD') }}</p>
     </div>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <div class="post__content content" v-html="post.content.rendered" />
-    <nuxt-link to="/">back</nuxt-link>
-  </section>
+    <nuxt-link to="/topics" class="post__back">投稿一覧へ</nuxt-link>
+  </Section>
 </template>
 
 <script>
@@ -16,7 +17,7 @@ import axios from 'axios'
 export default {
   async asyncData({ $config, params }) {
     return await axios
-      .get(`${$config.apiUrl}/posts/${params.post}?_embed`)
+      .get(`${$config.apiUrl}/posts/${params.topic}?_embed`)
       .then((res) => {
         return {
           post: res.data,
@@ -31,7 +32,8 @@ export default {
 
 <style lang="scss" scoped>
 .post {
-  width: 80%;
+  width: 640px;
+  max-width: 90%;
   margin: 1rem auto;
 
   &__header {
@@ -46,6 +48,19 @@ export default {
 
   &__content {
     margin-top: 2rem;
+  }
+
+  &__back {
+    width: 80px;
+    margin: 4rem auto 0;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      width: 100px;
+      color: #666;
+    }
   }
 }
 </style>

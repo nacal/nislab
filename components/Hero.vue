@@ -16,7 +16,7 @@
         span
       }}</span>
     </h2>
-    <nuxt-link to="#about" class="hero__scroll">Scroll</nuxt-link>
+    <!-- <nuxt-link to="#about" class="hero__scroll">Scroll</nuxt-link> -->
   </div>
 </template>
 

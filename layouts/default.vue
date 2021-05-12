@@ -39,6 +39,7 @@ export default {
   margin: 0 auto;
 }
 .l-main {
+  max-width: 100vw;
   min-height: 100vh;
 
   &.lower {

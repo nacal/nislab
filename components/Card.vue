@@ -1,8 +1,9 @@
 <template>
   <section class="card">
-    <nuxt-link :to="`/posts/${id}`" class="card__link">
+    <nuxt-link :to="`/topics/${id}`" class="card__link">
       <div class="card__header">
-        <h2 class="card__title">{{ title }}</h2>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <h2 class="card__title" v-html="title" />
         <p class="card__date">{{ date }}</p>
       </div>
       <img :src="img" alt="" class="card__img" />
