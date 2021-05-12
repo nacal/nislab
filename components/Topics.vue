@@ -43,6 +43,9 @@
         "
       />
     </article>
+    <p v-if="filteredPosts.length === 0" class="topics__error">
+      表示できる投稿がありません
+    </p>
   </div>
 </template>
 
@@ -101,6 +104,11 @@ export default {
     max-width: 1024px;
     margin: auto;
     margin-top: 4rem;
+  }
+
+  &__error {
+    font-size: 1.5rem;
+    text-align: center;
   }
 }
 </style>
