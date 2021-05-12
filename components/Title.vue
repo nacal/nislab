@@ -28,8 +28,8 @@ export default {
     top: 50%;
     left: 50%;
     z-index: -1;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     content: '';
     background: $main-color;
     border-radius: 50%;
