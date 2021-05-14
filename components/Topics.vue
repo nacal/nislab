@@ -1,8 +1,8 @@
 <template>
   <v-app class="topics">
     <v-container fluid>
-      <v-row align="center" justify="center">
-        <v-col cols="12" sm="4">
+      <v-row align="center" justify="center" class="topics__search">
+        <v-col cols="12" sm="6">
           <v-text-field
             v-model="filterQuery.title"
             label="検索"
@@ -11,9 +11,7 @@
             @change="handleChangeQuery"
           ></v-text-field>
         </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-col cols="6" sm="1">
+        <v-col cols="5" sm="2" offset-sm="1">
           <v-select
             v-model="filterQuery.categories"
             :items="years"
@@ -21,7 +19,7 @@
             @change="handleChangeQuery"
           />
         </v-col>
-        <v-col cols="6" sm="1" offset-sm="1">
+        <v-col cols="5" sm="2" offset="1">
           <v-select
             v-model="filterQuery.categories"
             :items="years"
@@ -95,6 +93,11 @@ export default {
 
 <style lang="scss" scoped>
 .topics {
+  &__search {
+    width: 720px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
