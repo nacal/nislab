@@ -1,34 +1,39 @@
 <template>
-  <div class="topics">
-    <div class="topics__search">
-      <input
-        v-model="filterQuery.title"
-        type="text"
-        placeholder="タイトル検索"
-        clearable
-        class="topics__searchTitle"
-        @change="handleChangeQuery"
-      />
-      <select
-        v-model="filterQuery.categories"
-        placeholder="投稿年度"
-        clearable
-        class="topics__searchYears"
-        @change="handleChangeQuery"
-      >
-        >
-        <option value="" disabled selected style="display: none">
-          投稿年度
-        </option>
-        <option
-          v-for="(item, index) in years"
-          :key="index"
-          :label="item"
-          :value="10 - index"
-        ></option>
-      </select>
-      <button class="topics__searchReset" @click="reset">リセット</button>
-    </div>
+  <v-app class="topics">
+    <v-container fluid>
+      <v-row align="center" justify="center">
+        <v-col cols="12" sm="4">
+          <v-text-field
+            v-model="filterQuery.title"
+            label="検索"
+            placeholder="キーワードを入力"
+            outlined
+            @change="handleChangeQuery"
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-col cols="6" sm="1">
+          <v-select
+            v-model="filterQuery.categories"
+            :items="years"
+            label="投稿年度"
+            @change="handleChangeQuery"
+          />
+        </v-col>
+        <v-col cols="6" sm="1" offset-sm="1">
+          <v-select
+            v-model="filterQuery.categories"
+            :items="years"
+            label="カテゴリ"
+            @change="handleChangeQuery"
+          />
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-btn @click="reset">RESET</v-btn>
+      </v-row>
+    </v-container>
     <article class="topics__items">
       <Card
         v-for="post in filteredPosts"
@@ -46,7 +51,7 @@
     <p v-if="filteredPosts.length === 0" class="topics__error">
       表示できる投稿がありません
     </p>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -59,7 +64,13 @@ export default {
         title: '',
         categories: '',
       },
-      years: ['2021年度', '2020年度', '2019年度', '2018年度', '2017年度'],
+      years: [
+        { text: '2021年度', value: 9 },
+        { text: '2020年度', value: 8 },
+        { text: '2019年度', value: 7 },
+        { text: '2018年度', value: 6 },
+        { text: '2017年度', value: 5 },
+      ],
     }
   },
   computed: {
@@ -84,18 +95,6 @@ export default {
 
 <style lang="scss" scoped>
 .topics {
-  &__search {
-    display: flex;
-    justify-content: center;
-  }
-  &__searchTitle {
-    width: 240px;
-    height: 1.5rem;
-  }
-  &__searchYears,
-  &__searchReset {
-    margin-left: 1rem;
-  }
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
