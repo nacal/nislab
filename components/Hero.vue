@@ -54,6 +54,7 @@ export default {
     height: 100%;
     background-color: transparent;
     background-image: radial-gradient(rgba(0, 0, 0, 0.3) 35%, transparent 36%);
+    background-repeat: repeat;
     background-position: 0 0, 20px 20px;
     background-size: 3px 3px;
   }

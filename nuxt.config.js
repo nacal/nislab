@@ -55,6 +55,8 @@ export default {
     '@nuxtjs/pwa',
     // https://www.npmjs.com/package/@nuxtjs/style-resources
     '@nuxtjs/style-resources',
+    // https://vuetifyjs.com
+    '@nuxtjs/vuetify',
   ],
 
   styleResources: {
