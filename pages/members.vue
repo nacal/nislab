@@ -39,8 +39,13 @@ export default {
 
 <style lang="scss">
 .content {
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
   table {
     width: 100%;
+    margin-top: 1.5rem;
     background-color: #efefef;
   }
 
