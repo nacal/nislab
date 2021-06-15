@@ -13,23 +13,23 @@
 export default {
   data() {
     return {
-      scrolledLayout: false,
+      scrolledLayout: true,
       scroll: 0,
     }
   },
-  mounted() {
-    window.addEventListener('scroll', this.scrollWindow)
-  },
-  methods: {
-    scrollWindow() {
-      this.scroll = window.scrollY
-      if (this.scroll > 0) {
-        this.scrolledLayout = true
-      } else {
-        this.scrolledLayout = false
-      }
-    },
-  },
+  // mounted() {
+  //   window.addEventListener('scroll', this.scrollWindow)
+  // },
+  // methods: {
+  //   scrollWindow() {
+  //     this.scroll = window.scrollY
+  //     if (this.scroll > 0) {
+  //       this.scrolledLayout = true
+  //     } else {
+  //       this.scrolledLayout = false
+  //     }
+  //   },
+  // },
 }
 </script>
 
@@ -41,7 +41,7 @@ export default {
   justify-content: space-between;
   width: 90%;
   max-width: 1200px;
-  height: 120px;
+  height: 80px;
   padding: 0 2.5rem;
   background-color: #fff;
   filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.3));
@@ -50,11 +50,6 @@ export default {
 
   &__title {
     width: 180px;
-  }
-
-  &.scrolled {
-    top: 16px;
-    height: 80px;
   }
 }
 </style>
