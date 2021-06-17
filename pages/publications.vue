@@ -1,9 +1,9 @@
 <template>
-  <Section class="members">
-    <Title :title="`Members`" />
-    <article class="members__content">
+  <Section class="publications">
+    <Title :title="`Publications`" />
+    <article class="publications__content">
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <div v-html="members.content.rendered" />
+      <div v-html="publications.content.rendered" />
     </article>
   </Section>
 </template>
@@ -14,10 +14,10 @@ import axios from 'axios'
 export default {
   async asyncData({ $config }) {
     return await axios
-      .get($config.apiUrl + '/pages?slug=members')
+      .get($config.apiUrl + '/pages?slug=publications')
       .then((res) => {
         return {
-          members: res.data[0],
+          publications: res.data[0],
         }
       })
       .catch()
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.members {
+.publications {
   width: 640px;
   max-width: 90%;
   margin: 1rem auto;
@@ -38,22 +38,14 @@ export default {
 </style>
 
 <style lang="scss">
-.members__content {
+.publications__content {
   h2 {
+    margin: 1rem 0 0.5rem 0;
     font-size: 1.5rem;
-    text-align: center;
-  }
-  table {
-    width: 100%;
-    margin-top: 1.5rem;
-    background-color: #efefef;
   }
 
-  th,
-  td {
-    padding-left: 1rem;
-    line-height: 2rem;
-    border: solid 1px;
+  li {
+    margin-bottom: 0.5rem;
   }
 }
 </style>
