@@ -1,7 +1,7 @@
 <template>
   <Section class="members">
     <Title :title="`Members`" />
-    <article class="members__content content">
+    <article class="members__content">
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="members.content.rendered" />
     </article>
@@ -38,7 +38,7 @@ export default {
 </style>
 
 <style lang="scss">
-.content {
+.members__content {
   h2 {
     font-size: 1.5rem;
     text-align: center;
