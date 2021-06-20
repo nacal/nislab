@@ -14,7 +14,7 @@
         <nuxt-link to="privacy-policy" class="footer__link"
           >プライバシーポリシー</nuxt-link
         >
-        <nuxt-link to="terms-of-use" class="footer__link">利用規約</nuxt-link>
+        <nuxt-link to="disclaimer" class="footer__link">免責事項</nuxt-link>
       </div>
       <small class="footer__copy">&copy; 2021 NISLAB.</small>
     </div>
