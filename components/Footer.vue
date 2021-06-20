@@ -7,7 +7,7 @@
         class="footer__logo"
       />
       <div class="footer__nav">
-        <Nav />
+        <FooterNav />
         <a href="" class="footer__login">Login</a>
       </div>
       <div class="footer__links">
