@@ -42,12 +42,13 @@ export default {}
 
   &__nav {
     display: flex;
-    align-items: center;
+    align-items: top;
   }
 
   &__login {
-    margin-left: 2.5rem;
+    margin-left: 5rem;
     font-family: $font-set-en;
+    line-height: 2em;
   }
 
   &__links {
