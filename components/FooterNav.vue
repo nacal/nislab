@@ -38,7 +38,7 @@ export default {
         [
           { name: 'members', link: 'members' },
           { name: '2021年度', link: 'members' },
-          { name: '卒業生(メンバー限定)', link: 'members' },
+          { name: '卒業生', link: 'members' },
         ],
         [{ name: 'contact', link: 'contact' }],
       ],

@@ -1,11 +1,11 @@
 <template>
   <footer class="footer">
     <div class="footer__contents">
-      <img
+      <!-- <img
         src="~/assets/images/nislab-dark.png"
         alt="NISLAB"
         class="footer__logo"
-      />
+      /> -->
       <div class="footer__nav">
         <FooterNav />
         <a href="" class="footer__login">Login</a>
@@ -43,6 +43,7 @@ export default {}
   &__nav {
     display: flex;
     align-items: top;
+    margin-top: 3rem;
   }
 
   &__login {
