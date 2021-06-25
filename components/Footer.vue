@@ -1,20 +1,20 @@
 <template>
   <footer class="footer">
     <div class="footer__contents">
-      <img
+      <!-- <img
         src="~/assets/images/nislab-dark.png"
         alt="NISLAB"
         class="footer__logo"
-      />
+      /> -->
       <div class="footer__nav">
-        <Nav />
+        <FooterNav />
         <a href="" class="footer__login">Login</a>
       </div>
       <div class="footer__links">
         <nuxt-link to="privacy-policy" class="footer__link"
           >プライバシーポリシー</nuxt-link
         >
-        <nuxt-link to="terms-of-use" class="footer__link">利用規約</nuxt-link>
+        <nuxt-link to="disclaimer" class="footer__link">免責事項</nuxt-link>
       </div>
       <small class="footer__copy">&copy; 2021 NISLAB.</small>
     </div>
@@ -42,12 +42,14 @@ export default {}
 
   &__nav {
     display: flex;
-    align-items: center;
+    align-items: top;
+    margin-top: 3rem;
   }
 
   &__login {
-    margin-left: 2.5rem;
+    margin-left: 5rem;
     font-family: $font-set-en;
+    line-height: 2em;
   }
 
   &__links {
