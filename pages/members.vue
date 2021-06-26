@@ -1,20 +1,25 @@
 <template>
   <Section class="members">
     <Title :title="`Members`" />
-    <article class="members__content"></article>
+    <!-- eslint-disable vue/no-v-html -->
+    <article
+      class="members__content"
+      v-html="$md.render(members.fields.body)"
+    />
   </Section>
 </template>
 
 <script>
-import axios from 'axios'
+import { createClient } from '~/plugins/contentful.js'
+const client = createClient()
 
 export default {
-  async asyncData({ $config }) {
-    return await axios
-      .get($config.apiUrl + '/pages?slug=members')
-      .then((res) => {
+  async asyncData() {
+    return await client
+      .getEntry('1z61gVmBB7WnqlH8aIgfJW')
+      .then((members) => {
         return {
-          members: res.data[0],
+          members,
         }
       })
       .catch()
