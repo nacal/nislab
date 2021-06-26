@@ -2,16 +2,12 @@
   <div>
     <article class="cards">
       <Card
-        v-for="post in posts"
-        :id="post.id"
-        :key="post.id"
-        :title="post.title.rendered"
-        :date="$moment(post.date).format('YYYY-MM-DD')"
-        :img="
-          post._embedded['wp:featuredmedia'][0].media_details.sizes.medium[
-            'source_url'
-          ]
-        "
+        v-for="post in posts2"
+        :id="post.sys.id"
+        :key="post.sys.id"
+        :title="post.fields.title"
+        :date="post.fields.date"
+        :img="post.fields.headerImage"
       />
     </article>
   </div>
@@ -36,6 +32,9 @@ export default {
       return this.filter
         ? this.$store.getters.indexPosts(this.number)
         : this.$store.state.posts
+    },
+    posts2() {
+      return this.$store.state.posts2
     },
   },
 }

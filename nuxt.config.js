@@ -74,7 +74,8 @@ export default {
   // loading: '~/components/Loading.vue',
 
   publicRuntimeConfig: {
-    apiUrl: process.env.API_URL,
+    apiUrl: process.env.NUXT_ENV_API_URL,
+    postTypeID: process.env.NUXT_ENV_POST_TYPE_ID,
   },
 
   generate: {

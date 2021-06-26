@@ -26,6 +26,7 @@ export default {
   mounted() {
     this.path === '/' ? (this.lowerPage = false) : (this.lowerPage = true)
     this.$store.dispatch('getPosts')
+    this.$store.dispatch('getPosts2')
   },
 }
 </script>

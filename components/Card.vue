@@ -6,7 +6,11 @@
         <h2 class="card__title" v-html="title" />
         <p class="card__date">{{ date }}</p>
       </div>
-      <img :src="img" alt="" class="card__img" />
+      <img
+        :src="img.fields.file.url"
+        :alt="img.fields.description"
+        class="card__image"
+      />
     </nuxt-link>
   </section>
 </template>
