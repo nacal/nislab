@@ -1,4 +1,5 @@
-import axios from 'axios'
+import { createClient } from './plugins/contentful.js'
+const client = createClient()
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -57,7 +58,13 @@ export default {
     '@nuxtjs/style-resources',
     // https://vuetifyjs.com
     '@nuxtjs/vuetify',
+    '@nuxtjs/markdownit',
   ],
+
+  markdownit: {
+    injected: true,
+    breaks: true,
+  },
 
   styleResources: {
     scss: ['@/assets/_sass/*.scss'],
@@ -80,19 +87,19 @@ export default {
 
   generate: {
     fallback: true,
-    interval: 100,
     routes() {
-      return axios.get(process.env.API_URL + '/posts?_embed').then((posts) => {
-        return posts.data.map((post) => {
-          return {
-            route: `/topics/${post.id}`,
-            payload: {
-              posts: posts.data,
-              currentPost: post,
-            },
-          }
+      return client
+        .getEntries({
+          content_type: 'posts',
         })
-      })
+        .then((entries) => {
+          return entries.items.map((entry) => {
+            return {
+              route: `topics/${entry.sys.id}`,
+              payload: entry,
+            }
+          })
+        })
     },
   },
 }
