@@ -4,7 +4,7 @@
       <h2 class="post__title">{{ post.fields.title }}</h2>
       <p class="post__date">{{ post.fields.publishedAt }}</p>
     </div>
-    <!-- eslint-disable-next-line vue/no-v-html -->
+    <!-- eslint-disable vue/no-v-html -->
     <div class="post__content content" v-html="$md.render(post.fields.body)" />
     <nuxt-link to="/topics" class="post__back">投稿一覧へ</nuxt-link>
   </Section>
