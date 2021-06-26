@@ -13,8 +13,8 @@
         </v-col>
         <v-col cols="5" sm="2" offset-sm="1">
           <v-select
-            v-model="filterQuery.categories"
-            :items="years"
+            v-model="filterQuery.years"
+            :items="year"
             label="投稿年度"
             @change="handleChangeQuery"
           />
@@ -22,7 +22,7 @@
         <v-col cols="5" sm="2" offset="1">
           <v-select
             v-model="filterQuery.categories"
-            :items="years"
+            :items="category"
             label="カテゴリ"
             @change="handleChangeQuery"
           />
@@ -56,15 +56,11 @@ export default {
     return {
       filterQuery: {
         title: '',
+        years: '',
         categories: '',
       },
-      years: [
-        { text: '2021年度', value: 9 },
-        { text: '2020年度', value: 8 },
-        { text: '2019年度', value: 7 },
-        { text: '2018年度', value: 6 },
-        { text: '2017年度', value: 5 },
-      ],
+      year: ['2021年度', '2020年度'],
+      category: ['月例発表会', '外部発表', 'その他'],
     }
   },
   computed: {
@@ -81,6 +77,7 @@ export default {
     reset() {
       this.filterQuery.title = ''
       this.filterQuery.categories = ''
+      this.filterQuery.years = ''
       this.setFilterQuery(this.filterQuery)
     },
   },

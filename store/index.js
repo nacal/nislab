@@ -24,13 +24,19 @@ export const getters = {
 
     if (state.filterQuery.title !== '') {
       data = data.filter(function (row) {
-        return row.title.rendered.includes(state.filterQuery.title)
+        return row.fields.title.includes(state.filterQuery.title)
       })
     }
 
     if (state.filterQuery.categories !== '') {
       data = data.filter(function (row) {
-        return row.categories[0] === state.filterQuery.categories
+        return row.fields.category.fields.name === state.filterQuery.categories
+      })
+    }
+
+    if (state.filterQuery.years !== '') {
+      data = data.filter(function (row) {
+        return row.fields.year.fields.year === state.filterQuery.years
       })
     }
 
