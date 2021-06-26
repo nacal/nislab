@@ -8,7 +8,7 @@
       <img
         :src="img.fields.file.url"
         :alt="img.fields.description"
-        class="card__image"
+        class="card__img"
       />
     </nuxt-link>
   </section>
