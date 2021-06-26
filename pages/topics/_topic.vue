@@ -23,7 +23,7 @@ export default {
           post,
         }
       })
-      .catch(console.error)
+      .catch()
   },
 }
 </script>
