@@ -3,16 +3,12 @@ const client = createClient()
 
 export const state = () => ({
   posts: [],
-  posts2: [],
   filterQuery: {},
 })
 
 export const mutations = {
   setPosts(state, res) {
     state.posts = res
-  },
-  setPosts2(state, res) {
-    state.posts2 = res
   },
   setFilterQuery(state, filterQuery) {
     state.filterQuery = { ...filterQuery }
@@ -44,22 +40,13 @@ export const getters = {
 
 export const actions = {
   async getPosts({ commit }) {
-    await this.$axios
-      .get(this.$config.apiUrl + '/posts?per_page=50&_embed')
-      .then((res) => {
-        commit('setPosts', res.data)
-      })
-      .catch()
-  },
-
-  async getPosts2({ commit }) {
     await client
       .getEntries({
         content_type: this.$config.postTypeID,
         order: '-fields.date',
       })
       .then((entries) => {
-        commit('setPosts2', entries.items)
+        commit('setPosts', entries.items)
       })
       .catch()
   },

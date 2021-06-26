@@ -1,31 +1,28 @@
 <template>
   <Section class="post">
     <div class="post__header">
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <h2 class="post__title" v-html="post.title.rendered" />
-      <p class="post__date">{{ $moment(post.date).format('YYYY-MM-DD') }}</p>
+      <h2 class="post__title">{{ post.fields.title }}</h2>
+      <p class="post__date">{{ post.fields.publishedAt }}</p>
     </div>
-    <!-- eslint-disable-next-line vue/no-v-html -->
-    <div class="post__content content" v-html="post.content.rendered" />
+    <div class="post__content content">{{ post.fields.body }}</div>
     <nuxt-link to="/topics" class="post__back">投稿一覧へ</nuxt-link>
   </Section>
 </template>
 
 <script>
-import axios from 'axios'
+import { createClient } from '~/plugins/contentful.js'
+const client = createClient()
 
 export default {
-  async asyncData({ $config, params }) {
-    return await axios
-      .get(`${$config.apiUrl}/posts/${params.topic}?_embed`)
-      .then((res) => {
+  async asyncData({ params }) {
+    return await client
+      .getEntry(params.topic)
+      .then((post) => {
         return {
-          post: res.data,
+          post,
         }
       })
-      .catch(() => {
-        return {}
-      })
+      .catch(console.error)
   },
 }
 </script>

@@ -1,10 +1,7 @@
 <template>
   <Section class="publications">
     <Title :title="`Publications`" />
-    <article class="publications__content">
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div v-html="publications.content.rendered" />
-    </article>
+    <article class="publications__content"></article>
   </Section>
 </template>
 

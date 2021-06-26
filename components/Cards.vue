@@ -2,7 +2,7 @@
   <div>
     <article class="cards">
       <Card
-        v-for="post in posts2"
+        v-for="post in posts"
         :id="post.sys.id"
         :key="post.sys.id"
         :title="post.fields.title"
@@ -32,9 +32,6 @@ export default {
       return this.filter
         ? this.$store.getters.indexPosts(this.number)
         : this.$store.state.posts
-    },
-    posts2() {
-      return this.$store.state.posts2
     },
   },
 }

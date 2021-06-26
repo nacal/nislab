@@ -2,8 +2,7 @@
   <section class="card">
     <nuxt-link :to="`/topics/${id}`" class="card__link">
       <div class="card__header">
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <h2 class="card__title" v-html="title" />
+        <h2 class="card__title">{{ title }}</h2>
         <p class="card__date">{{ date }}</p>
       </div>
       <img
@@ -19,7 +18,7 @@
 export default {
   props: {
     id: {
-      type: Number,
+      type: String,
       required: true,
     },
     title: {
@@ -31,7 +30,7 @@ export default {
       required: true,
     },
     img: {
-      type: String,
+      type: Object,
       required: true,
     },
   },

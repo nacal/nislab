@@ -35,15 +35,11 @@
     <article class="topics__items">
       <Card
         v-for="post in filteredPosts"
-        :id="post.id"
-        :key="post.id"
-        :title="post.title.rendered"
-        :date="$moment(post.date).format('YYYY-MM-DD')"
-        :img="
-          post._embedded['wp:featuredmedia'][0].media_details.sizes.medium[
-            'source_url'
-          ]
-        "
+        :id="post.sys.id"
+        :key="post.sys.id"
+        :title="post.fields.title"
+        :date="post.fields.date"
+        :img="post.fields.headerImage"
       />
     </article>
     <p v-if="filteredPosts.length === 0" class="topics__error">
