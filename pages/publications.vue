@@ -1,23 +1,25 @@
 <template>
   <Section class="publications">
     <Title :title="`Publications`" />
-    <article class="publications__content">
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div v-html="publications.content.rendered" />
-    </article>
+    <!-- eslint-disable vue/no-v-html -->
+    <article
+      class="publications__content"
+      v-html="$md.render(publication.fields.body)"
+    />
   </Section>
 </template>
 
 <script>
-import axios from 'axios'
+import { createClient } from '~/plugins/contentful.js'
+const client = createClient()
 
 export default {
-  async asyncData({ $config }) {
-    return await axios
-      .get($config.apiUrl + '/pages?slug=publications')
-      .then((res) => {
+  async asyncData() {
+    return await client
+      .getEntry('5WmJj7781fcwFFWFRnHkZP')
+      .then((publication) => {
         return {
-          publications: res.data[0],
+          publication,
         }
       })
       .catch()
@@ -39,7 +41,7 @@ export default {
 
 <style lang="scss">
 .publications__content {
-  h2 {
+  h3 {
     margin: 1rem 0 0.5rem 0;
     font-size: 1.5rem;
   }

@@ -1,3 +1,6 @@
+import { createClient } from '~/plugins/contentful.js'
+const client = createClient()
+
 export const state = () => ({
   posts: [],
   filterQuery: {},
@@ -21,13 +24,19 @@ export const getters = {
 
     if (state.filterQuery.title !== '') {
       data = data.filter(function (row) {
-        return row.title.rendered.includes(state.filterQuery.title)
+        return row.fields.title.includes(state.filterQuery.title)
       })
     }
 
     if (state.filterQuery.categories !== '') {
       data = data.filter(function (row) {
-        return row.categories[0] === state.filterQuery.categories
+        return row.fields.category.fields.name === state.filterQuery.categories
+      })
+    }
+
+    if (state.filterQuery.years !== '') {
+      data = data.filter(function (row) {
+        return row.fields.year.fields.year === state.filterQuery.years
       })
     }
 
@@ -37,10 +46,13 @@ export const getters = {
 
 export const actions = {
   async getPosts({ commit }) {
-    await this.$axios
-      .get(this.$config.apiUrl + '/posts?per_page=50&_embed')
-      .then((res) => {
-        commit('setPosts', res.data)
+    await client
+      .getEntries({
+        content_type: this.$config.postTypeID,
+        order: '-fields.date',
+      })
+      .then((entries) => {
+        commit('setPosts', entries.items)
       })
       .catch()
   },
