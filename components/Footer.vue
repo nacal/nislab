@@ -27,6 +27,7 @@ export default {}
 
 <style lang="scss" scoped>
 .footer {
+  color: #fff;
   background-color: $main-color;
 
   &__contents {

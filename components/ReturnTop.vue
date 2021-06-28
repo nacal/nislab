@@ -67,6 +67,7 @@ export default {
   height: 64px;
   padding: 0.75rem;
   line-height: 64px;
+  color: #fff;
   text-align: center;
   cursor: pointer;
   background-color: $main-color;
