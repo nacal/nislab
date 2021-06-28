@@ -29,7 +29,7 @@
         </v-col>
       </v-row>
       <v-row justify="center">
-        <v-btn @click="reset">RESET</v-btn>
+        <v-btn @click="reset">リセット</v-btn>
       </v-row>
     </v-container>
     <article class="topics__items">
@@ -97,7 +97,7 @@ export default {
     gap: 64px 32px;
     justify-items: center;
     max-width: 1024px;
-    margin: auto;
+    margin: 0 auto;
     margin-top: 4rem;
   }
 
