@@ -1,5 +1,8 @@
 <template>
-  <h2 class="title">{{ title }}</h2>
+  <h2 class="title">
+    <span class="title__en">{{ title }}</span>
+    <span class="title__ja">{{ subTitle }}</span>
+  </h2>
 </template>
 
 <script>
@@ -10,6 +13,11 @@ export default {
       required: true,
       default: 'title',
     },
+    subTitle: {
+      type: String,
+      required: true,
+      default: 'タイトル',
+    },
   },
 }
 </script>
@@ -17,23 +25,22 @@ export default {
 <style lang="scss" scoped>
 .title {
   position: relative;
-  z-index: 1;
-  font-family: $font-set-en;
-  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-weight: bold;
   text-align: center;
 
-  &::before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    width: 75px;
-    height: 75px;
-    content: '';
-    background: $main-color;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
+  &__en {
+    padding: 0 0.5rem;
+    font-family: $font-set-en;
+    font-size: 2rem;
+    color: $main-color;
+    border-bottom: 3px solid #000;
+  }
+
+  &__ja {
+    margin-top: 0.5rem;
   }
 }
 </style>
