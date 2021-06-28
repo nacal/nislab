@@ -36,7 +36,7 @@ export default {
     font-family: $font-set-en;
     font-size: 2rem;
     color: $main-color;
-    border-bottom: 3px solid #000;
+    border-bottom: 3px solid $main-color;
   }
 
   &__ja {
