@@ -18,9 +18,9 @@ export default {
   data() {
     return {
       navItems: [
-        'about',
         'research',
         'topics',
+        'education',
         'publications',
         'members',
         'contact',

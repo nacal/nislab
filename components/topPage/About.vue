@@ -12,7 +12,7 @@
       & Distributed Systems）の研究を行っています．
     </p>
     <div class="about__button">
-      <MoreButton :link-to="`/about`" />
+      <MoreButton :link-to="`/education`" />
     </div>
   </Section>
 </template>
