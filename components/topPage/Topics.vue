@@ -1,6 +1,6 @@
 <template>
   <Section class="topics" :bg="`#ddd`">
-    <Title :title="`New Topics`" />
+    <Title :title="`New Topics`" :sub-title="`新着記事`" />
     <Cards class="topics__cards" :number="6" :filter="true" />
     <div class="topics__button">
       <MoreButton :link-to="`/topics`" />

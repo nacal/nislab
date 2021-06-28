@@ -1,6 +1,6 @@
 <template>
   <Section class="publications">
-    <Title :title="`Publications`" />
+    <Title :title="`Publications`" :sub-title="`研究業績`" />
     <!-- eslint-disable vue/no-v-html -->
     <article
       class="publications__content"

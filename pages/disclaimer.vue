@@ -1,6 +1,6 @@
 <template>
   <Section class="disclaimer">
-    <Title :title="`免責事項`" />
+    <Title :title="`Disclaimer`" :sub-title="`免責事項`" />
     <article class="disclaimer__content">
       <p>
         当サイトのコンテンツや情報において、可能な限り正確な情報を掲載するよう努めておりますが、
