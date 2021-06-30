@@ -2,17 +2,17 @@
   <div>
     <Hero />
     <About />
-    <Topics />
+    <IndexTopics />
   </div>
 </template>
 
 <script>
-import { About, Topics } from '~/components/topPage/index'
+import { About, IndexTopics } from '~/components/topPage/index'
 
 export default {
   components: {
     About,
-    Topics,
+    IndexTopics,
   },
 }
 </script>

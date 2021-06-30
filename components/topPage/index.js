@@ -1,4 +1,4 @@
 import About from './About'
-import Topics from './Topics'
+import IndexTopics from './IndexTopics'
 
-export { About, Topics }
+export { About, IndexTopics }

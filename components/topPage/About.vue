@@ -24,7 +24,7 @@ export default {}
 <style lang="scss" scoped>
 .about {
   &__text {
-    width: 720px;
+    width: 960px;
     max-width: 90%;
     margin: 0 auto;
     margin-top: 8rem;
