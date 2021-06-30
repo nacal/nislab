@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .post {
-  width: 640px;
+  width: 960px;
   max-width: 90%;
   margin: 1rem auto;
 
@@ -66,7 +66,7 @@ export default {
 <style lang="scss">
 .content {
   h3 {
-    margin-top: 2rem;
+    margin: 2rem 0 1rem 0;
     font-size: 1.25rem;
     font-weight: bold;
   }
@@ -82,7 +82,7 @@ export default {
 
   figure,
   img {
-    width: 640px;
+    width: 960px;
     max-width: 100%;
     margin: 0 auto;
   }
@@ -91,7 +91,7 @@ export default {
   p,
   ol,
   figure {
-    margin-bottom: 1rem;
+    margin: 1rem 0;
   }
 }
 </style>
