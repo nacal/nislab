@@ -3,7 +3,7 @@
 ## Create `.env` File
 
 ```.env
-NUXT_ENV_POST_TYPE_ID=''
+NUXT_ENV_POST_TYPE_ID=
 NUXT_ENV_SPACE_ID=
 NUXT_ENV_CTF_ACCESS_TOKEN=
 ```
