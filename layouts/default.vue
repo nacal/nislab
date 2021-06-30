@@ -41,9 +41,5 @@ export default {
 .l-main {
   max-width: 100vw;
   min-height: 100vh;
-
-  &.lower {
-    margin-top: 60px;
-  }
 }
 </style>
