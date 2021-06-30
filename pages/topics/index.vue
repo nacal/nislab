@@ -1,6 +1,6 @@
 <template>
   <Section>
-    <Title :title="`Topics`" />
+    <Title :title="`Topics`" :sub-title="`記事一覧`" />
     <Topics class="topics__cards" />
   </Section>
 </template>

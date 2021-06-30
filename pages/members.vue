@@ -1,6 +1,6 @@
 <template>
   <Section class="members">
-    <Title :title="`Members`" />
+    <Title :title="`Members`" :sub-title="`メンバー一覧`" />
     <!-- eslint-disable vue/no-v-html -->
     <article
       class="members__content"

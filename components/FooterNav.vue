@@ -25,9 +25,9 @@ export default {
   data() {
     return {
       navItems: [
-        [{ name: 'about', link: 'about' }],
         [{ name: 'research', link: 'research' }],
         [{ name: 'topics', link: 'topics' }],
+        [{ name: 'education', link: 'education' }],
         [
           { name: 'publications', link: 'publications' },
           { name: '2021年度', link: 'publications/2021' },
