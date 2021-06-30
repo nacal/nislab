@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 .members {
-  width: 640px;
+  width: 960px;
   max-width: 90%;
   margin: 1rem auto;
 
@@ -48,14 +48,17 @@ export default {
   table {
     width: 100%;
     margin-top: 1.5rem;
-    background-color: #efefef;
+    background-color: #fafafa;
   }
 
   th,
   td {
-    padding-left: 1rem;
     line-height: 2rem;
     border: solid 1px;
+  }
+
+  tr :not(:first-child) {
+    padding-left: 1rem;
   }
 }
 </style>
