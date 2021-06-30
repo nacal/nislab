@@ -2,10 +2,10 @@
   <Section class="publications">
     <Title :title="`Publications`" :sub-title="`研究業績`" />
     <!-- eslint-disable vue/no-v-html -->
-    <article
-      class="publications__content"
-      v-html="$md.render(publication.fields.body)"
-    />
+    <article class="publications__content">
+      <h3 class="publications__title">{{ publications[0].fields.title }}</h3>
+      <div v-html="$md.render(publications[0].fields.body)" />
+    </article>
   </Section>
 </template>
 
@@ -14,12 +14,15 @@ import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 
 export default {
-  async asyncData() {
+  async asyncData({ $config }) {
     return await client
-      .getEntry('5WmJj7781fcwFFWFRnHkZP')
-      .then((publication) => {
+      .getEntries({
+        content_type: $config.publicationsTypeID,
+        // order: '-fields.date',
+      })
+      .then((res) => {
         return {
-          publication,
+          publications: res.items,
         }
       })
       .catch()
@@ -32,6 +35,13 @@ export default {
   width: 960px;
   max-width: 90%;
   margin: 1rem auto;
+
+  &__title {
+    margin-bottom: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
 
   &__content {
     margin-top: 4rem;
@@ -51,7 +61,12 @@ export default {
   }
 
   li {
+    padding-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  li + li {
+    border-top: 1px solid #000;
   }
 }
 </style>
