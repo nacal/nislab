@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 .publications {
-  width: 640px;
+  width: 960px;
   max-width: 90%;
   margin: 1rem auto;
 
@@ -42,12 +42,16 @@ export default {
 <style lang="scss">
 .publications__content {
   h3 {
-    margin: 1rem 0 0.5rem 0;
+    margin-bottom: 1rem;
     font-size: 1.5rem;
   }
 
+  h3:not(:first-child) {
+    margin-top: 2rem;
+  }
+
   li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 }
 </style>
