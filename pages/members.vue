@@ -1,6 +1,6 @@
 <template>
   <Section class="members">
-    <Title :title="`Members`" :sub-title="`メンバー一覧`" />
+    <Title :title="`Members`" :sub-title="`研究室メンバー`" />
     <!-- eslint-disable vue/no-v-html -->
     <article
       class="members__content"
@@ -34,7 +34,7 @@ export default {
   margin: 1rem auto;
 
   &__content {
-    margin-top: 8rem;
+    margin-top: 4rem;
   }
 }
 </style>
