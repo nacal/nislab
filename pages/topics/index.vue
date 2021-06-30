@@ -8,7 +8,7 @@
 <style lang="scss" scoped>
 .topics {
   &__cards {
-    margin-top: 8rem;
+    margin-top: 4rem;
   }
 }
 </style>
