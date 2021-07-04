@@ -62,36 +62,3 @@ export default {
   }
 }
 </style>
-
-<style lang="scss">
-.content {
-  h3 {
-    margin: 2rem 0 1rem 0;
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-
-  a {
-    color: $main-color;
-    text-decoration: underline;
-  }
-
-  li {
-    line-height: 2em;
-  }
-
-  figure,
-  img {
-    width: 960px;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  h2,
-  p,
-  ol,
-  figure {
-    margin: 1rem 0;
-  }
-}
-</style>

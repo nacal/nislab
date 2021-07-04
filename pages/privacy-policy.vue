@@ -1,7 +1,7 @@
 <template>
   <Section class="privacyPolicy">
     <Title :title="`Privacy Policy`" :sub-title="`プライバシーポリシー`" />
-    <article class="privacyPolicy__content">
+    <article class="privacyPolicy__content content">
       <p>
         NISLAB（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
       </p>
@@ -109,25 +109,5 @@
   width: 640px;
   max-width: 90%;
   margin: 1rem auto;
-
-  &__content {
-    margin-top: 8rem;
-
-    h2 {
-      margin: 1rem 0 0.5rem 0;
-      font-size: 1.5rem;
-    }
-
-    ul,
-    ol {
-      margin-left: 1.5rem;
-      list-style: disc;
-    }
-
-    li,
-    p {
-      margin-bottom: 0.5rem;
-    }
-  }
 }
 </style>
