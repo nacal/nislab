@@ -10,7 +10,7 @@
       v-html="$md.render(post.post.fields.body)"
     />
     <article class="post__around">
-      <article>
+      <article v-if="nextPost.nextPost" class="-left">
         <h3 class="post__aroundTitle">次の記事</h3>
         <Card
           :id="nextPost.nextPost.sys.id"
@@ -19,7 +19,7 @@
           :img="nextPost.nextPost.fields.headerImage"
         />
       </article>
-      <article>
+      <article v-if="previousPost.previousPost" class="-right">
         <h3 class="post__aroundTitle -r">前の記事</h3>
         <Card
           :id="previousPost.previousPost.sys.id"
@@ -103,8 +103,14 @@ export default {
   }
 
   &__around {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    height: 300px;
+
+    .-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 
   &__aroundTitle {
