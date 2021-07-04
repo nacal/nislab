@@ -28,10 +28,7 @@
   margin: 1rem auto;
 
   &__content {
-    margin-top: 8rem;
-    // p {
-    //   margin-bottom: 0.5rem;
-    // }
+    margin-top: 4rem;
   }
 }
 </style>
