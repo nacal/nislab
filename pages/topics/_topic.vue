@@ -1,17 +1,17 @@
 <template>
-  <Section class="post">
-    <div class="post__header">
-      <h2 class="post__title">{{ post.post.fields.title }}</h2>
-      <p class="post__date">{{ post.post.fields.date }}</p>
+  <Section class="topic">
+    <div class="topic__header">
+      <h2 class="topic__title">{{ post.post.fields.title }}</h2>
+      <p class="topic__date">{{ post.post.fields.date }}</p>
     </div>
     <!-- eslint-disable vue/no-v-html -->
     <article
-      class="post__content content"
+      class="topic__content content"
       v-html="$md.render(post.post.fields.body)"
     />
-    <article class="post__around">
+    <article class="topic__around">
       <article v-if="nextPost.nextPost" class="-left">
-        <h3 class="post__aroundTitle">次の記事</h3>
+        <h3 class="topic__aroundTitle">次の記事</h3>
         <Card
           :id="nextPost.nextPost.sys.id"
           :title="nextPost.nextPost.fields.title"
@@ -20,7 +20,7 @@
         />
       </article>
       <article v-if="previousPost.previousPost" class="-right">
-        <h3 class="post__aroundTitle -r">前の記事</h3>
+        <h3 class="topic__aroundTitle -r">前の記事</h3>
         <Card
           :id="previousPost.previousPost.sys.id"
           :title="previousPost.previousPost.fields.title"
@@ -29,7 +29,7 @@
         />
       </article>
     </article>
-    <nuxt-link to="/topics" class="post__back">投稿一覧へ</nuxt-link>
+    <nuxt-link to="/topics" class="topic__back">投稿一覧へ</nuxt-link>
   </Section>
 </template>
 
@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.post {
+.topic {
   width: $content-width;
   max-width: 90%;
   margin: 1rem auto;
