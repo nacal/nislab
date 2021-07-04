@@ -41,49 +41,18 @@ export default {
 .card {
   width: 320px;
 
-  &__header,
-  &__img {
-    transition: all 0.3s;
-  }
-
   &__link {
     display: flex;
     flex-wrap: wrap;
   }
 
   &__header {
-    position: relative;
     display: flex;
     flex-direction: column;
     order: 1;
     width: 100%;
     padding: 1rem 0 0.5rem 0.5rem;
     overflow: hidden;
-
-    &::before,
-    &::after {
-      position: absolute;
-      bottom: 0;
-      height: 3px;
-      transition: all 0.2s;
-    }
-
-    &::before {
-      right: 0;
-      width: 0;
-      content: '';
-      background-color: #000;
-      transform: translate(-325px, 1px) rotate(45deg);
-      transform-origin: 100% 100%;
-    }
-
-    &::after {
-      left: 0;
-      width: 100%;
-      content: '';
-      background-color: #000;
-      transform: translateX(-325px);
-    }
   }
 
   &__title {
@@ -110,27 +79,15 @@ export default {
     height: 180px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
+    transition: all 0.2s;
   }
 
   &__link:hover {
     .card__img {
       filter: grayscale(50%);
       border-radius: 10px;
-      transition: all 0.5s;
+      transition: all 0.3s;
       transform: scale(0.8, 0.8);
-    }
-    .card__header {
-      &::before,
-      &::after {
-        transition: all 0.3s;
-      }
-      &::before {
-        width: 20px;
-        transform: translate(-24px, 1px) rotate(45deg);
-      }
-      &::after {
-        transform: translateX(-24px);
-      }
     }
   }
 }

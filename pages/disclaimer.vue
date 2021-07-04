@@ -1,7 +1,7 @@
 <template>
   <Section class="disclaimer">
     <Title :title="`Disclaimer`" :sub-title="`免責事項`" />
-    <article class="disclaimer__content">
+    <article class="disclaimer__content content">
       <p>
         当サイトのコンテンツや情報において、可能な限り正確な情報を掲載するよう努めておりますが、
         誤情報が入り込んだり、情報が古くなったりすることもあり、必ずしもその内容の正確性および完全性を保証するものではございません。当該情報に基づいて被ったいかなる損害について、一切責任を負うものではございませんのであらかじめご了承ください。
@@ -23,15 +23,12 @@
 
 <style lang="scss" scoped>
 .disclaimer {
-  width: 640px;
+  width: $slim-content-width;
   max-width: 90%;
   margin: 1rem auto;
 
   &__content {
-    margin-top: 8rem;
-    p {
-      margin-bottom: 0.5rem;
-    }
+    margin-top: 4rem;
   }
 }
 </style>

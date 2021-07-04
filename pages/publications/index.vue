@@ -2,7 +2,7 @@
   <Section class="publications">
     <Title :title="`Publications`" :sub-title="`研究業績`" />
     <!-- eslint-disable vue/no-v-html -->
-    <article class="publications__content">
+    <article class="publications__content content">
       <h3 class="publications__title">{{ publications[0].fields.title }}</h3>
       <div v-html="$md.render(publications[0].fields.body)" />
     </article>
@@ -54,7 +54,7 @@ export default {
   }
 
   &__content {
-    width: 960px;
+    width: $content-width;
     max-width: 90%;
     margin: 4rem auto 8rem;
   }
@@ -64,30 +64,9 @@ export default {
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 1.5rem;
     justify-items: center;
-    width: 960px;
+    width: $content-width;
     max-width: 90%;
     margin: 0 auto;
-  }
-}
-</style>
-
-<style lang="scss">
-.publications__content {
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  h3:not(:first-child) {
-    margin-top: 2.5rem;
-  }
-
-  li {
-    padding-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  li + li {
-    border-top: 1px solid #000;
   }
 }
 </style>

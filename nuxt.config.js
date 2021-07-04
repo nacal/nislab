@@ -64,6 +64,17 @@ export default {
   markdownit: {
     injected: true,
     breaks: true,
+    use: [
+      [
+        'markdown-it-link-attributes',
+        {
+          attrs: {
+            target: '_blank',
+            rel: 'noopener',
+          },
+        },
+      ],
+    ],
   },
 
   styleResources: {
