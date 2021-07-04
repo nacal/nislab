@@ -1,11 +1,34 @@
 <template>
   <Section class="post">
     <div class="post__header">
-      <h2 class="post__title">{{ post.fields.title }}</h2>
-      <p class="post__date">{{ post.fields.date }}</p>
+      <h2 class="post__title">{{ post.post.fields.title }}</h2>
+      <p class="post__date">{{ post.post.fields.date }}</p>
     </div>
     <!-- eslint-disable vue/no-v-html -->
-    <div class="post__content content" v-html="$md.render(post.fields.body)" />
+    <article
+      class="post__content content"
+      v-html="$md.render(post.post.fields.body)"
+    />
+    <article class="post__around">
+      <article>
+        <h3 class="post__aroundTitle">次の記事</h3>
+        <Card
+          :id="nextPost.nextPost.sys.id"
+          :title="nextPost.nextPost.fields.title"
+          :date="nextPost.nextPost.fields.date"
+          :img="nextPost.nextPost.fields.headerImage"
+        />
+      </article>
+      <article>
+        <h3 class="post__aroundTitle -r">前の記事</h3>
+        <Card
+          :id="previousPost.previousPost.sys.id"
+          :title="previousPost.previousPost.fields.title"
+          :date="previousPost.previousPost.fields.date"
+          :img="previousPost.previousPost.fields.headerImage"
+        />
+      </article>
+    </article>
     <nuxt-link to="/topics" class="post__back">投稿一覧へ</nuxt-link>
   </Section>
 </template>
@@ -16,7 +39,7 @@ const client = createClient()
 
 export default {
   async asyncData({ params }) {
-    return await client
+    const post = await client
       .getEntry(params.topic)
       .then((post) => {
         return {
@@ -24,6 +47,33 @@ export default {
         }
       })
       .catch()
+    const previousPost = await client
+      .getEntries({
+        content_type: 'posts',
+        order: '-fields.date',
+        'fields.date[lt]': post.post.fields.date,
+        limit: 1,
+      })
+      .then((previousPost) => {
+        return {
+          previousPost: previousPost.items[0],
+        }
+      })
+      .catch()
+    const nextPost = await client
+      .getEntries({
+        content_type: 'posts',
+        order: 'fields.date',
+        'fields.date[gt]': post.post.fields.date,
+        limit: 1,
+      })
+      .then((nextPost) => {
+        return {
+          nextPost: nextPost.items[0],
+        }
+      })
+      .catch()
+    return { post, previousPost, nextPost }
   },
 }
 </script>
@@ -47,7 +97,22 @@ export default {
   }
 
   &__content {
-    margin-top: 2rem;
+    padding-bottom: 4rem;
+    margin: 2rem 0 4rem 0;
+    border-bottom: 1px solid #000;
+  }
+
+  &__around {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__aroundTitle {
+    margin-bottom: 1rem;
+
+    &.-r {
+      text-align: right;
+    }
   }
 
   &__back {
