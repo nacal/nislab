@@ -2,7 +2,7 @@
   <Section class="post">
     <div class="post__header">
       <h2 class="post__title">{{ post.fields.title }}</h2>
-      <p class="post__date">{{ post.fields.publishedAt }}</p>
+      <p class="post__date">{{ post.fields.date }}</p>
     </div>
     <!-- eslint-disable vue/no-v-html -->
     <div class="post__content content" v-html="$md.render(post.fields.body)" />
@@ -35,13 +35,15 @@ export default {
   margin: 1rem auto;
 
   &__header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
     align-items: center;
-    justify-content: space-between;
   }
 
   &__title {
     font-size: 2rem;
+    font-weight: bold;
+    word-break: keep-all;
   }
 
   &__content {
