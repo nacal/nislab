@@ -23,7 +23,7 @@
 
 <style lang="scss" scoped>
 .disclaimer {
-  width: 640px;
+  width: $slim-content-width;
   max-width: 90%;
   margin: 1rem auto;
 

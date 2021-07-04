@@ -40,7 +40,7 @@ export default {
   }
 
   &__content {
-    width: 960px;
+    width: $content-width;
     max-width: 90%;
     margin: 4rem auto 8rem;
   }

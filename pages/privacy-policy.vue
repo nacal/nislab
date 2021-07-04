@@ -106,7 +106,7 @@
 
 <style lang="scss" scoped>
 .privacyPolicy {
-  width: 640px;
+  width: $slim-content-width;
   max-width: 90%;
   margin: 1rem auto;
 

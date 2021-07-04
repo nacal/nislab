@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .post {
-  width: 960px;
+  width: $content-width;
   max-width: 90%;
   margin: 1rem auto;
 

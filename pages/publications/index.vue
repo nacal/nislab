@@ -54,7 +54,7 @@ export default {
   }
 
   &__content {
-    width: 960px;
+    width: $content-width;
     max-width: 90%;
     margin: 4rem auto 8rem;
   }
@@ -64,7 +64,7 @@ export default {
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 1.5rem;
     justify-items: center;
-    width: 960px;
+    width: $content-width;
     max-width: 90%;
     margin: 0 auto;
   }
