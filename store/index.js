@@ -3,8 +3,8 @@ const client = createClient()
 
 export const state = () => ({
   posts: [],
-  years: [],
-  categories: [],
+  years: ['全て'],
+  categories: ['全て'],
   filterQuery: {},
 })
 
@@ -37,15 +37,21 @@ export const getters = {
     }
 
     if (state.filterQuery.categories !== '') {
-      data = data.filter(function (row) {
-        return row.fields.category.fields.name === state.filterQuery.categories
-      })
+      return state.filterQuery.categories === '全て'
+        ? data
+        : (data = data.filter(function (row) {
+            return (
+              row.fields.category.fields.name === state.filterQuery.categories
+            )
+          }))
     }
 
     if (state.filterQuery.years !== '') {
-      data = data.filter(function (row) {
-        return row.fields.year.fields.year === state.filterQuery.years
-      })
+      return state.filterQuery.years === '全て'
+        ? data
+        : (data = data.filter(function (row) {
+            return row.fields.year.fields.year === state.filterQuery.years
+          }))
     }
 
     return data

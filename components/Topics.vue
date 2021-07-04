@@ -59,7 +59,6 @@ export default {
         years: '',
         categories: '',
       },
-      category: ['月例発表会', '外部発表', 'その他'],
     }
   },
   computed: {
