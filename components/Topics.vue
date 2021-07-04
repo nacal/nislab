@@ -14,7 +14,7 @@
         <v-col cols="5" sm="2" offset-sm="1">
           <v-select
             v-model="filterQuery.years"
-            :items="year"
+            :items="years"
             label="投稿年度"
             @change="handleChangeQuery"
           />
@@ -22,7 +22,7 @@
         <v-col cols="5" sm="2" offset="1">
           <v-select
             v-model="filterQuery.categories"
-            :items="category"
+            :items="categories"
             label="カテゴリ"
             @change="handleChangeQuery"
           />
@@ -59,12 +59,17 @@ export default {
         years: '',
         categories: '',
       },
-      year: ['2021年度', '2020年度'],
       category: ['月例発表会', '外部発表', 'その他'],
     }
   },
   computed: {
     ...mapGetters(['filteredPosts']),
+    years() {
+      return this.$store.state.years
+    },
+    categories() {
+      return this.$store.state.categories
+    },
   },
   mounted() {
     this.setFilterQuery(this.filterQuery)
