@@ -11,7 +11,7 @@
     />
     <article class="topic__around">
       <article v-if="nextPost.nextPost" class="-left">
-        <h3 class="topic__aroundTitle">次の記事</h3>
+        <h3 class="topic__aroundTitle">← 次の記事</h3>
         <Card
           :id="nextPost.nextPost.sys.id"
           :title="nextPost.nextPost.fields.title"
@@ -20,7 +20,7 @@
         />
       </article>
       <article v-if="previousPost.previousPost" class="-right">
-        <h3 class="topic__aroundTitle -r">前の記事</h3>
+        <h3 class="topic__aroundTitle -r">前の記事 →</h3>
         <Card
           :id="previousPost.previousPost.sys.id"
           :title="previousPost.previousPost.fields.title"
