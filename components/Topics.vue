@@ -111,3 +111,9 @@ export default {
   }
 }
 </style>
+
+<style>
+.v-application a {
+  color: #000;
+}
+</style>
