@@ -38,6 +38,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a {
+  color: #000;
+}
+
 .card {
   width: 320px;
 
