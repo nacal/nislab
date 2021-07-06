@@ -19,5 +19,5 @@ jobs:
       - run: echo "${{ secrets.SERVER_KEY }}" > aws_lightsail_key
       - run: chmod 600 ./aws_lightsail_key
       - run: ssh -o StrictHostKeyChecking=no -i ./aws_lightsail_key ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "rm -r /var/www/html/dist"
-      # - run: scp -o StrictHostKeyChecking=no -i ./aws_lightsail_key -r ./dist ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/html
+      - run: scp -o StrictHostKeyChecking=no -i ./aws_lightsail_key -r ./dist ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/html
       - run: echo "🍏 This job's status is ${{ job.status }}."
