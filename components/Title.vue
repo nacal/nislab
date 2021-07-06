@@ -30,17 +30,40 @@ export default {
   align-items: center;
   font-weight: bold;
   text-align: center;
+  transition: 3s;
 
   &__en {
+    position: relative;
+    display: inline-block;
     padding: 0 0.5rem;
     font-family: $font-set-en;
     font-size: 2rem;
     color: $main-color;
-    border-bottom: 3px solid $main-color;
+
+    &::after {
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      content: '';
+      background: $main-color;
+      transition: transform 0.3s;
+      transform: scale(1, 1);
+      transform-origin: center top;
+    }
   }
 
   &__ja {
     margin-top: 0.5rem;
+  }
+}
+
+.page-enter-active {
+  .title {
+    &__en::after {
+      transform: scale(0, 1);
+    }
   }
 }
 </style>

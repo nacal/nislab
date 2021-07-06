@@ -30,8 +30,6 @@ export default {
 
 <style lang="scss" scoped>
 .publications {
-  margin: 1rem auto;
-
   &__title {
     margin-bottom: 2.5rem;
     font-size: 1.5rem;

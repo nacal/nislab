@@ -31,7 +31,6 @@ export default {
 .members {
   width: $content-width;
   max-width: 90%;
-  margin: 1rem auto;
 
   &__content {
     margin-top: 4rem;
