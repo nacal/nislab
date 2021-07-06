@@ -82,7 +82,6 @@ export default {
 .topic {
   width: $content-width;
   max-width: 90%;
-  margin: 1rem auto;
 
   &__header {
     display: grid;

@@ -32,8 +32,6 @@ export default {
 
 <style lang="scss" scoped>
 .advisor {
-  margin: 1rem auto;
-
   &__content {
     width: $content-width;
     max-width: 90%;

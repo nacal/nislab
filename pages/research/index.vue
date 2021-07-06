@@ -13,8 +13,6 @@
 
 <style lang="scss" scoped>
 .research {
-  margin: 1rem auto;
-
   &__content {
     width: $content-width;
     max-width: 90%;
