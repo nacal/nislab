@@ -91,11 +91,6 @@ export default {
   },
   // loading: '~/components/Loading.vue',
 
-  publicRuntimeConfig: {
-    postTypeID: process.env.NUXT_ENV_POST_TYPE_ID,
-    publicationsTypeID: process.env.NUXT_ENV_PUBLICATIONS_TYPE_ID,
-  },
-
   generate: {
     fallback: true,
     routes() {
