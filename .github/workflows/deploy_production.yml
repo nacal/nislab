@@ -8,11 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: slackapi/slack-github-action@v1.15.0
-        # with:
-        #   payload: "{\"text\": \"NISLAB HPのビルド・デプロイを開始しました！\n\n詳しくは、<https://github.com/Kenny-NISLab/nisweb>を確認してください！\"}"
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
@@ -26,4 +21,12 @@ jobs:
       - run: chmod 600 ./aws_lightsail_key
       - run: scp -o StrictHostKeyChecking=no -i ./aws_lightsail_key ./dist.tar.gz ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/html
       - run: ssh -o StrictHostKeyChecking=no -i ./aws_lightsail_key ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "cd /var/www/html && rm -r dist && tar -zxvf dist.tar.gz && rm dist.tar.gz"
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - uses: act10ns/slack@v1
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: '#workflows'
+        if: always()
+      # - run: echo "🍏 This job's status is ${{ job.status }}."
