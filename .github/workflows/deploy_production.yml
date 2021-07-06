@@ -8,18 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Post to a Slack channel
-        # id: slack
-        # uses: slackapi/slack-github-action@v1.14.0
-        # with:
-        # channel-id: 'CHANNEL_ID' # Slack channel id to post message
-        # slack-message: 'NISLAB HP の ビルド・デプロイ を開始しました！'
-        # env:
-        # SLACK_BOT_TOKEN: ${{ secrets.SLACK_WEBHOOK_URL }}
-        uses: slackapi/slack-github-action@v1.14.0
+      - uses: slackapi/slack-github-action@v1.15.0
         with:
-          # payload: 'NISLAB HP の ビルド・デプロイ を開始しました！'
-          payload: "{\"text\": \"NISLAB HP の ビルド・デプロイ を開始しました！\n\n詳しくは、<https://github.com/Kenny-NISLab/nisweb> を確認してください！\"}"
+          # payload: "{\"key\":\"value\",\"foo\":\"bar\"}" # This data can be any valid JSON from a previous step in the GitHub Action
+          payload: "{\"text\": \"NISLAB HPのビルド・デプロイを開始しました！\n\n詳しくは、<https://github.com/Kenny-NISLab/nisweb>を確認してください！\"}"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - uses: actions/setup-node@v1
