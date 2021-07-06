@@ -2,10 +2,7 @@
   <Section class="members">
     <Title :title="`Members`" :sub-title="`研究室メンバー`" />
     <!-- eslint-disable vue/no-v-html -->
-    <article
-      class="members__content content"
-      v-html="$md.render(members.fields.body)"
-    />
+    <article class="members__content content" v-html="$md.render(body)" />
   </Section>
 </template>
 
@@ -16,10 +13,13 @@ const client = createClient()
 export default {
   async asyncData() {
     return await client
-      .getEntry('1z61gVmBB7WnqlH8aIgfJW')
-      .then((members) => {
+      .getEntries({
+        content_type: 'members',
+        limit: 1,
+      })
+      .then((res) => {
         return {
-          members,
+          body: res.items[0].fields.body,
         }
       })
       .catch()
