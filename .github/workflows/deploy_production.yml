@@ -18,7 +18,7 @@ jobs:
         # SLACK_BOT_TOKEN: ${{ secrets.SLACK_WEBHOOK_URL }}
         uses: slackapi/slack-github-action@v1.14.0
         with:
-          payload: 'NISLAB HP の ビルド・デプロイ を開始しました！'
+          # payload: 'NISLAB HP の ビルド・デプロイ を開始しました！'
           payload: "{\"text\": \"NISLAB HP の ビルド・デプロイ を開始しました！\n\n詳しくは、<https://github.com/Kenny-NISLab/nisweb> を確認してください！\"}"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
