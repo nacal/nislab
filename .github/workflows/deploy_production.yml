@@ -9,9 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: slackapi/slack-github-action@v1.15.0
-        with:
-          # payload: "{\"key\":\"value\",\"foo\":\"bar\"}" # This data can be any valid JSON from a previous step in the GitHub Action
-          payload: "{\"text\": \"NISLAB HPのビルド・デプロイを開始しました！\n\n詳しくは、<https://github.com/Kenny-NISLab/nisweb>を確認してください！\"}"
+        # with:
+        #   payload: "{\"text\": \"NISLAB HPのビルド・デプロイを開始しました！\n\n詳しくは、<https://github.com/Kenny-NISLab/nisweb>を確認してください！\"}"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - uses: actions/setup-node@v1
