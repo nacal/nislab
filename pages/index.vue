@@ -1,11 +1,9 @@
 <template>
-  <transition>
-    <div>
-      <Hero />
-      <About />
-      <IndexTopics />
-    </div>
-  </transition>
+  <div>
+    <Hero />
+    <About />
+    <IndexTopics />
+  </div>
 </template>
 
 <script>
