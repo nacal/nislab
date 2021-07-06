@@ -20,6 +20,7 @@ export default {
       navItems: [
         'research',
         'topics',
+        'advisor',
         'education',
         'publications',
         'members',
