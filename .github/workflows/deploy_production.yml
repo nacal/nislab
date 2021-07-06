@@ -11,6 +11,9 @@ jobs:
     #     node-version: [10.x, 12.x, 14.x, 15.x]
     steps:
       - uses: actions/checkout@v2
+      - run: echo ${{ secrets.SERVER_KEY }} > secret_key
+      - run: chmod 600 secret_key
+      - run: ssh -i secret_key ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} ls /var/www/html
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
@@ -19,8 +22,6 @@ jobs:
         env:
           NUXT_ENV_CTF_ACCESS_TOKEN: ${{ secrets.NUXT_ENV_CTF_ACCESS_TOKEN }}
           NUXT_ENV_SPACE_ID: ${{ secrets.NUXT_ENV_SPACE_ID }}
-      - run: echo ${{ secrets.SERVER_KEY }} >> aws_lightsail.pem
-      - run: ssh -i aws_lightsail.pem ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} ls /var/www/html
       # - uses: appleboy/scp-action@master
       #   with:
       #     host: ${{ secrets.SERVER_HOST }}
