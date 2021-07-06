@@ -64,6 +64,7 @@ export const actions = {
       .getEntries({
         content_type: this.$config.postTypeID,
         order: '-fields.date',
+        limit: 1000,
       })
       .then((entries) => {
         commit('setPosts', entries.items)
