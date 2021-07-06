@@ -1,6 +1,6 @@
 <template>
   <Section class="advisor">
-    <Title :title="`advisor`" :sub-title="`教員`" />
+    <Title :title="`Advisor`" :sub-title="`教員`" />
     <!-- eslint-disable vue/no-v-html -->
     <article class="advisor__content content">
       <div v-html="$md.render(body)" />
