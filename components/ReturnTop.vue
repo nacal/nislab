@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { ChevronUp } from '~/components/icons/index'
+import { ChevronUp } from '~/components/assets/index'
 
 export default {
   components: {
