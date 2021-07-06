@@ -26,10 +26,10 @@ import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 
 export default {
-  async asyncData({ $config }) {
+  async asyncData() {
     return await client
       .getEntries({
-        content_type: $config.publicationsTypeID,
+        content_type: 'publications',
         order: '-fields.date',
       })
       .then((res) => {

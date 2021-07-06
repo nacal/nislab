@@ -62,7 +62,7 @@ export const actions = {
   async getPosts({ commit }) {
     await client
       .getEntries({
-        content_type: this.$config.postTypeID,
+        content_type: 'posts',
         order: '-fields.date',
         limit: 1000,
       })
