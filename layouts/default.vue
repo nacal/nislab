@@ -28,6 +28,7 @@ export default {
     this.$store.dispatch('getPosts')
     this.$store.dispatch('getYears')
     this.$store.dispatch('getCategories')
+    this.$store.dispatch('getPublications')
   },
 }
 </script>

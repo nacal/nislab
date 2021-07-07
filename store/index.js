@@ -3,6 +3,7 @@ const client = createClient()
 
 export const state = () => ({
   posts: [],
+  publications: [],
   years: ['全て'],
   categories: ['全て'],
   filterQuery: {},
@@ -17,6 +18,9 @@ export const mutations = {
   },
   setCategories(state, res) {
     res.forEach((index) => state.categories.push(index.fields.name))
+  },
+  setPublications(state, res) {
+    state.publications = res
   },
   setFilterQuery(state, filterQuery) {
     state.filterQuery = { ...filterQuery }
@@ -90,6 +94,17 @@ export const actions = {
       })
       .then((entries) => {
         commit('setCategories', entries.items)
+      })
+      .catch()
+  },
+  async getPublications({ commit }) {
+    await client
+      .getEntries({
+        content_type: 'publications',
+        order: '-fields.date',
+      })
+      .then((entries) => {
+        commit('setPublications', entries.items)
       })
       .catch()
   },

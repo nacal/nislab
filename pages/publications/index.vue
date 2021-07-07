@@ -1,24 +1,15 @@
 <template>
-  <Section class="publications">
-    <Title :title="`Publications`" :sub-title="`研究業績`" />
-    <!-- eslint-disable vue/no-v-html -->
-    <article class="publications__content content">
-      <h3 class="publications__title">{{ publications[0].fields.title }}</h3>
-      <div v-html="$md.render(publications[0].fields.body)" />
-    </article>
-    <article>
-      <h3 class="publications__title">研究業績一覧</h3>
-      <ul class="publications__links">
-        <li v-for="(publication, index) in publications" :key="index">
-          <!-- <span v-show="index != 0"> -->
-          <nuxt-link :to="`publications/${publication.fields.slug}`">{{
-            publication.fields.title
-          }}</nuxt-link>
-          <!-- </span> -->
-        </li>
-      </ul>
-    </article>
-  </Section>
+  <article>
+    <Section class="publications">
+      <Title :title="`Publications`" :sub-title="`研究業績`" />
+      <!-- eslint-disable vue/no-v-html -->
+      <article class="publications__content content">
+        <h3 class="publications__title">{{ publications[0].fields.title }}</h3>
+        <div v-html="$md.render(publications[0].fields.body)" />
+      </article>
+    </Section>
+    <PublicationsList />
+  </article>
 </template>
 
 <script>
@@ -46,7 +37,7 @@ export default {
 .publications {
   &__title {
     margin-bottom: 2.5rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
     text-align: center;
   }
@@ -54,7 +45,7 @@ export default {
   &__content {
     width: $content-width;
     max-width: 90%;
-    margin: 4rem auto 8rem;
+    margin: 4rem auto 0;
   }
 
   &__links {

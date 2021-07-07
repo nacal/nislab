@@ -1,12 +1,15 @@
 <template>
-  <Section class="publications">
-    <Title :title="`Publications`" :sub-title="`研究業績`" />
-    <!-- eslint-disable vue/no-v-html -->
-    <article class="publications__content content">
-      <h3 class="publications__title">{{ publication.fields.title }}</h3>
-      <div v-html="$md.render(publication.fields.body)" />
-    </article>
-  </Section>
+  <article>
+    <Section class="publications">
+      <Title :title="`Publications`" :sub-title="`研究業績`" />
+      <!-- eslint-disable vue/no-v-html -->
+      <article class="publications__content content">
+        <h3 class="publications__title">{{ publication.fields.title }}</h3>
+        <div v-html="$md.render(publication.fields.body)" />
+      </article>
+    </Section>
+    <PublicationsList />
+  </article>
 </template>
 
 <script>
@@ -15,15 +18,25 @@ const client = createClient()
 
 export default {
   async asyncData({ params }) {
-    return await client
+    const publication = await client
       .getEntries({
         content_type: 'publications',
         'fields.slug': params.publication,
       })
       .then((res) => {
-        return { publication: res.items[0] }
+        return res.items[0]
       })
       .catch()
+    const publications = await client
+      .getEntries({
+        content_type: 'publications',
+        order: '-fields.date',
+      })
+      .then((res) => {
+        return res.items
+      })
+      .catch()
+    return { publications, publication }
   },
 }
 </script>
@@ -32,7 +45,7 @@ export default {
 .publications {
   &__title {
     margin-bottom: 2.5rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
     text-align: center;
   }
@@ -40,7 +53,17 @@ export default {
   &__content {
     width: $content-width;
     max-width: 90%;
-    margin: 4rem auto 8rem;
+    margin: 4rem auto 0;
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 1.5rem;
+    justify-items: center;
+    width: $content-width;
+    max-width: 90%;
+    margin: 0 auto;
   }
 }
 </style>
