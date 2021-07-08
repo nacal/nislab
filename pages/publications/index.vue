@@ -7,6 +7,7 @@
         <h3 class="publications__title">{{ publications[0].fields.title }}</h3>
         <div v-html="$md.render(publications[0].fields.body)" />
       </article>
+      <ReturnPage />
     </Section>
     <PublicationsList />
   </article>

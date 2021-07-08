@@ -5,6 +5,7 @@
     <article class="networkArchitecture__content content">
       <div v-html="$md.render(body)" />
     </article>
+    <ReturnPage />
   </Section>
 </template>
 
