@@ -2,7 +2,7 @@
   <header class="header" :class="{ scrolled: scrolledLayout }">
     <h1 class="header__title">
       <nuxt-link to="/" aria-label="トップページに遷移する"
-        ><img src="~/assets/images/nislab-wide.png" alt="NISLAB"
+        ><Nislab
       /></nuxt-link>
     </h1>
     <Nav />
@@ -10,7 +10,12 @@
 </template>
 
 <script>
+import { Nislab } from '~/components/assets/index'
+
 export default {
+  components: {
+    Nislab,
+  },
   data() {
     return {
       scrolledLayout: true,
