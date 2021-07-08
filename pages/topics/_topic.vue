@@ -29,7 +29,7 @@
         />
       </article>
     </article>
-    <nuxt-link to="/topics" class="topic__back">投稿一覧へ</nuxt-link>
+    <ReturnPage text="投稿一覧へ" slug="/topics" />
   </Section>
 </template>
 
@@ -117,19 +117,6 @@ export default {
 
     &.-r {
       text-align: right;
-    }
-  }
-
-  &__back {
-    width: 80px;
-    margin: 4rem auto 0;
-    text-align: center;
-    border-bottom: 2px solid #000;
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-      width: 100px;
-      color: #666;
     }
   }
 }

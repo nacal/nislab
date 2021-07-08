@@ -1,11 +1,16 @@
 <template>
   <nuxt-link :to="linkTo" class="button" role="button"
-    ><span>more</span></nuxt-link
-  >
+    ><span>more</span><ChevronUp class="button__arrow"
+  /></nuxt-link>
 </template>
 
 <script>
+import { ChevronUp } from '~/components/assets/index'
+
 export default {
+  components: {
+    ChevronUp,
+  },
   props: {
     linkTo: {
       type: String,
@@ -32,6 +37,7 @@ export default {
   & span {
     position: relative;
     z-index: 1;
+    display: block;
     font-family: $font-set-en;
   }
 
@@ -48,10 +54,25 @@ export default {
     transform: translateX(-80%) translateY(-25px);
   }
 
-  &:hover::before {
-    width: 400px;
-    height: 400px;
-    transform: translateX(-1%) translateY(-175px);
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    height: 1rem;
+    transition: all 0.5s ease-in-out;
+    transform: rotate(90deg) translate(-0.5rem, 0);
+  }
+
+  &:hover {
+    &::before {
+      width: 400px;
+      height: 400px;
+      transform: translateX(-1%) translateY(-175px);
+    }
+
+    .button__arrow {
+      transform: rotate(90deg) translate(-0.5rem, -0.5rem);
+    }
   }
 }
 </style>

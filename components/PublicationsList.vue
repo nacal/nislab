@@ -1,5 +1,5 @@
 <template>
-  <Section :bg="`#ddd`">
+  <Section :bg="`#eee`">
     <h3 class="publicationsList__title">研究業績一覧</h3>
     <ul class="publicationsList__links">
       <li v-for="(publication, index) in publications" :key="index">

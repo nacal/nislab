@@ -2,6 +2,7 @@
   <Section>
     <Title :title="`Topics`" :sub-title="`記事一覧`" />
     <Topics class="topics__cards" />
+    <ReturnPage />
   </Section>
 </template>
 

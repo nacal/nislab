@@ -3,6 +3,7 @@
     <Title :title="`Members`" :sub-title="`研究室メンバー`" />
     <!-- eslint-disable vue/no-v-html -->
     <article class="members__content content" v-html="$md.render(body)" />
+    <ReturnPage />
   </Section>
 </template>
 

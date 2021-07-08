@@ -18,6 +18,7 @@
       </p>
       <p>以上</p>
     </article>
+    <ReturnPage />
   </Section>
 </template>
 

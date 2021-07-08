@@ -1,5 +1,5 @@
 <template>
-  <Section class="indexTopics" :bg="`#ddd`">
+  <Section class="indexTopics" :bg="`#eee`">
     <Title :title="`New Topics`" :sub-title="`新着記事`" />
     <Cards class="indexTopics__cards" :number="6" :filter="true" />
     <div class="indexTopics__button">

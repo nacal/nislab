@@ -150,7 +150,7 @@ export default {
   }
 
   a:hover {
-    color: #eee;
+    color: #dedede;
     transition: 0.3s;
   }
 }

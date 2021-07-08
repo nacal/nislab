@@ -8,6 +8,7 @@
         >Network Architecture</nuxt-link
       >
     </article>
+    <ReturnPage />
   </Section>
 </template>
 
