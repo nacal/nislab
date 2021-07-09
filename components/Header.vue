@@ -5,7 +5,8 @@
         ><Nislab
       /></nuxt-link>
     </h1>
-    <Nav />
+    <Nav class="header__nav" />
+    <Hamburger />
   </header>
 </template>
 
@@ -40,7 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  z-index: 10;
+  z-index: 30;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,8 +54,21 @@ export default {
   border-radius: 24px;
   transition: all 0.3s ease-in-out;
 
+  @include mq(desk) {
+    width: 100%;
+    height: 64px;
+    padding: 0 0 0 1rem;
+    border-radius: 0 0 24px 24px;
+  }
+
   &__title {
     width: 180px;
+  }
+
+  &__nav {
+    @include mq(desk) {
+      display: none;
+    }
   }
 }
 </style>
