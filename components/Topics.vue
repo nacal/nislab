@@ -92,7 +92,7 @@ export default {
 .topics {
   &__search {
     width: 720px;
-    max-width: 100%;
+    max-width: 90%;
     margin: 0 auto;
   }
   &__items {
@@ -100,7 +100,8 @@ export default {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 64px 32px;
     justify-items: center;
-    max-width: 1024px;
+    width: 1024px;
+    max-width: 100%;
     margin: 0 auto;
     margin-top: 4rem;
   }
