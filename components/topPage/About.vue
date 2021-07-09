@@ -28,11 +28,19 @@ export default {}
     max-width: 90%;
     margin: 0 auto;
     margin-top: 8rem;
+
+    @include mq(sp) {
+      margin-top: 4rem;
+    }
   }
 
   &__button {
     margin-top: 8rem;
     text-align: center;
+
+    @include mq(sp) {
+      margin-top: 4rem;
+    }
   }
 }
 </style>
