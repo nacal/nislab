@@ -1,6 +1,6 @@
 <template>
   <header class="header" :class="{ scrolled: scrolledLayout }">
-    <h1 class="header__title">
+    <h1 class="header__title" @click="close()">
       <nuxt-link to="/" aria-label="トップページに遷移する"
         ><Nislab
       /></nuxt-link>
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import { Nislab } from '~/components/assets/index'
 
 export default {
@@ -22,6 +23,9 @@ export default {
       scrolledLayout: true,
       scroll: 0,
     }
+  },
+  methods: {
+    ...mapMutations(['close']),
   },
   // mounted() {
   //   window.addEventListener('scroll', this.scrollWindow)
