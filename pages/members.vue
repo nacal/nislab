@@ -34,7 +34,7 @@ export default {
   max-width: 90%;
 
   &__content {
-    margin-top: 4rem;
+    margin: 4rem 1rem 0 1rem;
   }
 }
 </style>
