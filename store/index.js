@@ -7,6 +7,7 @@ export const state = () => ({
   years: ['全て'],
   categories: ['全て'],
   filterQuery: {},
+  isOpen: false,
 })
 
 export const mutations = {
@@ -24,6 +25,12 @@ export const mutations = {
   },
   setFilterQuery(state, filterQuery) {
     state.filterQuery = { ...filterQuery }
+  },
+  toggle(state) {
+    state.isOpen = !state.isOpen
+  },
+  close(state) {
+    state.isOpen = false
   },
 }
 
@@ -60,6 +67,7 @@ export const getters = {
 
     return data
   },
+  isOpen: (state) => state.isOpen,
 }
 
 export const actions = {

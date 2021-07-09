@@ -78,6 +78,8 @@ a {
 }
 
 .content {
+  overflow: hidden;
+  overflow-x: scroll;
   word-break: break-all;
 
   h3 {
@@ -112,7 +114,7 @@ a {
   }
 
   table {
-    width: 100%;
+    width: $content-width;
     margin-top: 1.5rem;
   }
 

@@ -1,7 +1,7 @@
 <template>
   <Section class="research">
     <Title :title="`Research`" :sub-title="`研究内容`" />
-    <article class="research__content">
+    <article class="research__content content">
       <nuxt-link to="research/iot">IoT</nuxt-link>
       <nuxt-link to="research/its">ITS</nuxt-link>
       <nuxt-link to="research/Network-architecture"

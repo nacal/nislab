@@ -1,11 +1,12 @@
 <template>
   <div>
     <Header class="l-header" />
+    <GlobalNav class="l-globalNav" :class="[isOpen ? 'open' : 'close']" />
     <main class="l-main" :class="{ lower: lowerPage }">
       <Nuxt />
     </main>
     <ReturnTop />
-    <Footer />
+    <Footer class="l-footer" />
   </div>
 </template>
 
@@ -16,6 +17,11 @@ export default {
       lowerPage: false,
       path: this.$route.path,
     }
+  },
+  computed: {
+    isOpen() {
+      return this.$store.state.isOpen
+    },
   },
   watch: {
     $route(to) {
@@ -40,10 +46,31 @@ export default {
   right: 0;
   left: 0;
   margin: 0 auto;
+
+  @include mq(desk) {
+    top: 0;
+  }
 }
 .l-main {
   max-width: 100vw;
   min-height: 100vh;
+}
+
+.l-globalNav {
+  z-index: 20;
+  transition: all 0.5s;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.close {
+  transform: translateX(100%);
+}
+
+.l-footer {
+  width: 100vw;
 }
 </style>
 

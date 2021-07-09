@@ -1,15 +1,17 @@
 <template>
   <header class="header" :class="{ scrolled: scrolledLayout }">
-    <h1 class="header__title">
+    <h1 class="header__title" @click="close()">
       <nuxt-link to="/" aria-label="トップページに遷移する"
         ><Nislab
       /></nuxt-link>
     </h1>
-    <Nav />
+    <Nav class="header__nav" />
+    <Hamburger />
   </header>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import { Nislab } from '~/components/assets/index'
 
 export default {
@@ -21,6 +23,9 @@ export default {
       scrolledLayout: true,
       scroll: 0,
     }
+  },
+  methods: {
+    ...mapMutations(['close']),
   },
   // mounted() {
   //   window.addEventListener('scroll', this.scrollWindow)
@@ -40,7 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  z-index: 10;
+  z-index: 30;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,8 +58,21 @@ export default {
   border-radius: 24px;
   transition: all 0.3s ease-in-out;
 
+  @include mq(desk) {
+    width: 100%;
+    height: 64px;
+    padding: 0 0 0 1rem;
+    border-radius: 0 0 24px 24px;
+  }
+
   &__title {
     width: 180px;
+  }
+
+  &__nav {
+    @include mq(desk) {
+      display: none;
+    }
   }
 }
 </style>

@@ -88,11 +88,19 @@ export default {
     display: inline;
     font-size: 2rem;
     border-bottom: 3px solid #fff;
+
+    @include mq(sp) {
+      font-size: 1.5rem;
+    }
   }
 
   &__labName {
     font-size: 4rem;
     line-height: 1em;
+
+    @include mq(sp) {
+      font-size: 3rem;
+    }
   }
 
   &__scroll {

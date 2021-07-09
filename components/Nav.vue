@@ -1,7 +1,12 @@
 <template>
   <nav class="nav">
     <ul class="nav__list">
-      <li v-for="(item, index) in navItems" :key="index" class="nav__item">
+      <li
+        v-for="(item, index) in navItems"
+        :key="index"
+        class="nav__item"
+        @click="close()"
+      >
         <nuxt-link
           :to="`/${item}`"
           class="nav__link"
@@ -14,6 +19,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   data() {
     return {
@@ -28,6 +35,9 @@ export default {
       ],
     }
   },
+  methods: {
+    ...mapMutations(['close']),
+  },
 }
 </script>
 
@@ -35,6 +45,13 @@ export default {
 .nav {
   &__list {
     display: flex;
+
+    @include mq(desk) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 128px;
+      color: #fff;
+    }
   }
 
   &__item {
@@ -45,6 +62,11 @@ export default {
 
     & + & {
       margin-left: 2.5rem;
+
+      @include mq(desk) {
+        margin-top: 1.5rem;
+        margin-left: 0;
+      }
     }
   }
 
