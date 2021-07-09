@@ -6,7 +6,7 @@
       <Nuxt />
     </main>
     <ReturnTop />
-    <!-- <Footer /> -->
+    <Footer class="l-footer" />
   </div>
 </template>
 
@@ -59,10 +59,6 @@ export default {
 .l-globalNav {
   z-index: 20;
   transition: all 0.5s;
-
-  // @include mq(desk, min) {
-  //   transform: translateX(0);
-  // }
 }
 
 .open {
@@ -71,6 +67,10 @@ export default {
 
 .close {
   transform: translateX(100%);
+}
+
+.l-footer {
+  width: 100vw;
 }
 </style>
 

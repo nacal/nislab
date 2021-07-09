@@ -60,15 +60,29 @@ export default {
   color: #fff;
   background-color: $main-color;
 
+  @include mq(tab) {
+    padding: 1.5rem 1.5rem 0;
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 1rem;
+
+    @include mq(tab) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__logo {
     width: 320px;
+    max-width: 100%;
     margin-top: 0.25rem;
+
+    @include mq(tab) {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   &__info,
@@ -86,6 +100,10 @@ export default {
     .-mb {
       margin-bottom: 0.5rem;
     }
+
+    @include mq(tab) {
+      align-items: center;
+    }
   }
 
   &__contents {
@@ -93,9 +111,17 @@ export default {
     flex-direction: column;
     align-items: flex-end;
 
+    @include mq(tab) {
+      align-items: center;
+    }
+
     & > :nth-last-child(2) {
       padding: 0 0 1.5rem 1rem;
       border-bottom: 1px solid $sub-color;
+
+      @include mq(tab) {
+        padding: 0 0 1.5rem 0;
+      }
     }
 
     & > :last-child {
@@ -107,6 +133,10 @@ export default {
     display: flex;
     align-items: center;
     line-height: 2em;
+
+    @include mq(tab) {
+      font-size: 0.825rem;
+    }
   }
 
   &__newTab {
