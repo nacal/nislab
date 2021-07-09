@@ -40,6 +40,11 @@ export default {
     width: $content-width;
     max-width: 90%;
     margin: 0 auto;
+
+    @include mq(tab) {
+      grid-template-columns: 1fr 1fr;
+      font-size: 0.875rem;
+    }
   }
 
   &__link {
