@@ -31,10 +31,9 @@ export default {
 <style lang="scss" scoped>
 .members {
   width: $content-width;
-  max-width: 90%;
 
   &__content {
-    margin: 4rem 1rem 0 1rem;
+    margin: 4rem 0 0 1rem;
   }
 }
 </style>

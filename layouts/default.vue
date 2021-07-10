@@ -28,6 +28,21 @@ export default {
       this.path = to.path
       to.path === '/' ? (this.lowerPage = false) : (this.lowerPage = true)
     },
+    isOpen: {
+      handler() {
+        if (this.isOpen === true) {
+          document.body.classList.add('overflow-y-hidden')
+          document.addEventListener('touchmove', this.handleTouchMove, {
+            passive: false,
+          })
+        } else {
+          document.body.classList.remove('overflow-y-hidden')
+          document.removeEventListener('touchmove', this.handleTouchMove, {
+            passive: false,
+          })
+        }
+      },
+    },
   },
   mounted() {
     this.path === '/' ? (this.lowerPage = false) : (this.lowerPage = true)
@@ -35,6 +50,11 @@ export default {
     this.$store.dispatch('getYears')
     this.$store.dispatch('getCategories')
     this.$store.dispatch('getPublications')
+  },
+  methods: {
+    handleTouchMove(event) {
+      event.preventDefault()
+    },
   },
 }
 </script>
@@ -82,5 +102,9 @@ export default {
 .page-enter,
 .page-leave-to {
   opacity: 0;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
 }
 </style>

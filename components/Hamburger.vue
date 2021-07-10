@@ -44,9 +44,6 @@ export default {
 
 .hamburger {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 64px;
   height: 64px;
   border-radius: 0 0 24px 0;
@@ -67,13 +64,17 @@ export default {
 
   &__icons {
     position: absolute;
-    display: block;
-    width: 32px;
-    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
     cursor: pointer;
   }
 
   &__icon {
+    width: 32px;
+    height: 32px;
     color: #fff;
   }
 }
