@@ -24,6 +24,7 @@ export default {
 <style lang="scss" scoped>
 .button {
   position: relative;
+  z-index: 1;
   display: inline-block;
   width: 240px;
   padding: 1rem 4rem;
@@ -45,6 +46,7 @@ export default {
     position: absolute;
     top: 50%;
     left: 0;
+    z-index: 1;
     width: 100px;
     height: 100px;
     content: '';
@@ -58,6 +60,7 @@ export default {
     position: absolute;
     top: 50%;
     right: 10%;
+    z-index: 1;
     height: 1rem;
     transition: all 0.5s ease-in-out;
     transform: rotate(90deg) translate(-0.5rem, 0);
