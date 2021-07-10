@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import smoothscroll from 'smoothscroll-polyfill'
 import { ChevronUp } from '~/components/assets/index'
 
 export default {
@@ -29,6 +30,7 @@ export default {
   },
   methods: {
     returnTop() {
+      smoothscroll.polyfill()
       window.scrollTo({
         top: 0,
         behavior: 'smooth',
