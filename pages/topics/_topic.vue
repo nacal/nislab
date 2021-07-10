@@ -113,6 +113,18 @@ export default {
       position: absolute;
       top: 0;
       right: 0;
+
+      @include mq(tab) {
+        position: relative;
+        margin-top: 2rem;
+      }
+    }
+
+    @include mq(tab) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: auto;
     }
   }
 
