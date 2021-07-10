@@ -49,7 +49,6 @@ export default {
     @include mq(desk) {
       flex-direction: column;
       align-items: center;
-      margin-top: 128px;
       color: #fff;
 
       a:hover {
