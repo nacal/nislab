@@ -6,7 +6,7 @@
       aria-label="Topへ戻る"
       @click="returnTop"
     >
-      <ChevronUp />
+      <ChevronUp class="returnTop__icon" />
     </button>
   </transition>
 </template>
@@ -77,6 +77,11 @@ export default {
   &:hover {
     transition: 0.5s all ease-out 0s;
     transform: scale(0.9);
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
   }
 }
 </style>
