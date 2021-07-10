@@ -51,6 +51,11 @@ export default {
       align-items: center;
       margin-top: 128px;
       color: #fff;
+
+      a:hover {
+        color: #dedede;
+        transition: 0.3s;
+      }
     }
   }
 
