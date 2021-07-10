@@ -32,7 +32,7 @@ jobs:
 
       - run: scp -o StrictHostKeyChecking=no -i ./aws_lightsail_key ./dist.tar.gz ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/html
 
-      - run: ssh -o StrictHostKeyChecking=no -i ./aws_lightsail_key ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "cd /var/www/html && rm -r dist && tar -zxvf dist.tar.gz && rm dist.tar.gz"
+      - run: ssh -o StrictHostKeyChecking=no -i ./aws_lightsail_key ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "cd /var/www/html && rm -f -r dist && tar -zxvf dist.tar.gz && rm dist.tar.gz"
 
       - uses: rtCamp/action-slack-notify@v2
         env:
