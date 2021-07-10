@@ -92,6 +92,10 @@ export default {
       content: '';
       background-color: $main-color;
       transition: 0.3s;
+
+      @include mq(desk) {
+        background-color: #fff;
+      }
     }
 
     &:hover::after {
