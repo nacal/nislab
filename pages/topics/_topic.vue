@@ -87,6 +87,10 @@ export default {
     display: grid;
     grid-template-columns: 10fr 1fr;
     align-items: center;
+
+    @include mq(tab) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__title {
