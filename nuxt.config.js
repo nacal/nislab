@@ -65,6 +65,7 @@ export default {
     injected: true,
     breaks: true,
     html: true,
+    linkify: false,
     use: [
       [
         'markdown-it-link-attributes',
