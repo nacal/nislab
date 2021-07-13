@@ -33,7 +33,8 @@ export default {
   width: $content-width;
 
   &__content {
-    margin: 4rem 0 0 1rem;
+    margin-top: 4rem;
+    overflow-x: scroll;
   }
 }
 </style>
