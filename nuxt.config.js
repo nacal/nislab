@@ -64,6 +64,7 @@ export default {
   markdownit: {
     injected: true,
     breaks: true,
+    html: true,
     use: [
       [
         'markdown-it-link-attributes',
