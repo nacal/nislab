@@ -5,7 +5,7 @@
     <article class="iot__content content">
       <div v-html="$md.render(body)" />
     </article>
-    <ReturnPage />
+    <ReturnPage text="研究一覧へ" slug="/research" />
   </Section>
 </template>
 
