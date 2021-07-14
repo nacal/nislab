@@ -34,7 +34,10 @@ export default {
 
   &__content {
     margin-top: 4rem;
-    overflow-x: scroll;
+
+    @include mq(lap) {
+      overflow-x: scroll;
+    }
   }
 }
 </style>
