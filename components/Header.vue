@@ -53,7 +53,7 @@ export default {
   max-width: 1200px;
   height: 80px;
   padding: 0 2.5rem;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.3));
   border-radius: 24px;
   transition: all 0.3s ease-in-out;
