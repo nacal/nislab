@@ -26,6 +26,7 @@ export default {
 <style lang="scss" scoped>
 .section {
   max-width: 100%;
+  min-height: 100vh;
   padding: 12rem 0;
   margin: 0 auto;
   background-color: var(--color);
