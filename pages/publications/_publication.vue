@@ -39,7 +39,7 @@ export default {
       .catch()
     return { publications, publication }
   },
-  head({ $config, params }) {
+  head({ $config }) {
     return {
       title: this.publication.fields.title + ' | NISLAB',
       meta: [
