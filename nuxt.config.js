@@ -43,7 +43,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: process.env.BASE_URL + 'nislab-ogp.jpg',
+        content: process.env.BASE_URL + 'nislab-ogp.png',
       },
       {
         hid: 'twitter:card',
