@@ -88,8 +88,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          // content: $config.baseURL + this.post.post.sys.id,
-          content: 'http://52.196.97.137/' + this.post.post.sys.id,
+          content: $config.baseURL + this.post.post.sys.id,
         },
         {
           hid: 'og:title',
