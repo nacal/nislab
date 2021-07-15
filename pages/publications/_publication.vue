@@ -46,7 +46,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: $config.baseURL + params.publication,
+          content: $config.baseURL + this.$route.path.substr(1),
         },
         {
           hid: 'og:title',
