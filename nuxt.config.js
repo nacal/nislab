@@ -26,6 +26,11 @@ export default {
         content: process.env.BASE_URL,
       },
       {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'NISLAB',
+      },
+      {
         hid: 'og:title',
         property: 'og:title',
         content: 'NISLAB',
