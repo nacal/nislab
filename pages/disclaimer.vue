@@ -22,6 +22,23 @@
   </Section>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      title: '免責事項 | NISLAB',
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: '免責事項 | NISLAB',
+        },
+      ],
+    }
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .disclaimer {
   width: $slim-content-width;
