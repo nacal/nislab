@@ -17,7 +17,33 @@ export default {
       {
         hid: 'description',
         name: 'description',
+        content: '同志社大学ネットワーク情報システム研究室',
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: process.env.BASE_URL,
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
         content: 'NISLAB',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: '同志社大学ネットワーク情報システム研究室',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: process.env.BASE_URL + 'nislab-ogp.jpg',
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
       },
     ],
     link: [
