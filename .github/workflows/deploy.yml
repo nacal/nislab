@@ -23,6 +23,7 @@ jobs:
         env:
           NUXT_ENV_CTF_ACCESS_TOKEN: ${{ secrets.NUXT_ENV_CTF_ACCESS_TOKEN }}
           NUXT_ENV_SPACE_ID: ${{ secrets.NUXT_ENV_SPACE_ID }}
+          NUXT_ENV_BASE_URL: ${{ secrets.NUXT_ENV_BASE_URL }}
 
       - run: tar -zcvf dist.tar.gz dist
 
