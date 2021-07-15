@@ -79,17 +79,11 @@ export default {
     return {
       title: this.post.post.fields.title + ' | NISLAB',
       meta: [
-        {
-          hid: 'og:site_name',
-          property: 'og:site_name',
-          content: this.post.post.fields.title + ' | NISLAB',
-        },
         { hid: 'og:type', property: 'og:type', content: 'website' },
         {
           hid: 'og:url',
           property: 'og:url',
-          // content: $config.baseURL + this.post.post.sys.id,
-          content: 'http://52.196.97.137/' + this.post.post.sys.id,
+          content: $config.baseURL + this.post.post.sys.id,
         },
         {
           hid: 'og:title',
@@ -100,11 +94,6 @@ export default {
           hid: 'og:image',
           property: 'og:image',
           content: 'https:' + this.post.post.fields.headerImage.fields.file.url,
-        },
-        {
-          hid: 'twitter:card',
-          name: 'twitter:card',
-          content: 'summary_large_image',
         },
       ],
     }

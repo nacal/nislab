@@ -39,6 +39,23 @@ export default {
       .catch()
     return { publications, publication }
   },
+  head({ $config, params }) {
+    return {
+      title: this.publication.fields.title + ' | NISLAB',
+      meta: [
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: $config.baseURL + params.publication,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.publication.fields.title + ' | NISLAB',
+        },
+      ],
+    }
+  },
 }
 </script>
 
