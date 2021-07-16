@@ -28,6 +28,18 @@ export default {
       })
       .catch()
   },
+  head() {
+    return {
+      title: 'Network Architecture | NISLAB',
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Network Architecture | NISLAB',
+        },
+      ],
+    }
+  },
 }
 </script>
 

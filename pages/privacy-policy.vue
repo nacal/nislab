@@ -105,6 +105,23 @@
   </Section>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      title: 'プライバシーポリシー | NISLAB',
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'プライバシーポリシー | NISLAB',
+        },
+      ],
+    }
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .privacyPolicy {
   width: $slim-content-width;

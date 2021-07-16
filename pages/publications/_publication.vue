@@ -39,14 +39,14 @@ export default {
       .catch()
     return { publications, publication }
   },
-  head({ $config, params }) {
+  head({ $config }) {
     return {
       title: this.publication.fields.title + ' | NISLAB',
       meta: [
         {
           hid: 'og:url',
           property: 'og:url',
-          content: $config.baseURL + params.publication,
+          content: $config.baseURL + this.$route.path.substr(1),
         },
         {
           hid: 'og:title',

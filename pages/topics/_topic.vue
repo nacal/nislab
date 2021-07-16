@@ -29,7 +29,7 @@
         />
       </article>
     </article>
-    <ReturnPage text="投稿一覧へ" slug="/topics" />
+    <ReturnPage text="記事一覧へ" slug="/topics" />
   </Section>
 </template>
 

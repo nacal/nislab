@@ -59,6 +59,18 @@ export default {
       ],
     }
   },
+  head() {
+    return {
+      title: '研究内容 | NISLAB',
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: '研究内容 | NISLAB',
+        },
+      ],
+    }
+  },
 }
 </script>
 

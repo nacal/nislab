@@ -25,6 +25,18 @@ export default {
       })
       .catch()
   },
+  head() {
+    return {
+      title: '研究室メンバー | NISLAB',
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: '研究室メンバー | NISLAB',
+        },
+      ],
+    }
+  },
 }
 </script>
 

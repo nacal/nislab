@@ -31,6 +31,18 @@ export default {
       })
       .catch()
   },
+  head() {
+    return {
+      title: '研究業績 | NISLAB',
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: '研究業績 | NISLAB',
+        },
+      ],
+    }
+  },
 }
 </script>
 

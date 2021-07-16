@@ -43,7 +43,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: process.env.BASE_URL + 'nislab-ogp.jpg',
+        content: process.env.BASE_URL + 'nislab-ogp.png',
       },
       {
         hid: 'twitter:card',
@@ -56,6 +56,28 @@ export default {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700|Quicksand:400,700&display=swap&subset=japanese',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/static/apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        sizes: '16x16',
+        type: 'image/png',
+        href: '/static/favicon-16x16.png',
+      },
+      {
+        rel: 'icon',
+        sizes: '32x32',
+        type: 'image/png',
+        href: '/static/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/static/favicon.ico',
       },
     ],
   },

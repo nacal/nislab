@@ -28,6 +28,18 @@ export default {
       })
       .catch()
   },
+  head() {
+    return {
+      title: 'お問い合わせ | NISLAB',
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'お問い合わせ | NISLAB',
+        },
+      ],
+    }
+  },
 }
 </script>
 

@@ -28,6 +28,18 @@ export default {
       })
       .catch()
   },
+  head() {
+    return {
+      title: 'IoT | NISLAB',
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'IoT | NISLAB',
+        },
+      ],
+    }
+  },
 }
 </script>
 
