@@ -53,6 +53,7 @@ export default {
     width: 100%;
     padding: 1rem 0 0.5rem 0.5rem;
     overflow: hidden;
+    transition: all 0.2s;
   }
 
   &__title {
@@ -88,6 +89,12 @@ export default {
       border-radius: 10px;
       transition: all 0.3s;
       transform: scale(0.8, 0.8);
+    }
+
+    .card__header {
+      color: #333;
+      transition: all 0.3s;
+      transform: scale(0.9, 0.9);
     }
   }
 }
