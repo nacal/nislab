@@ -1,35 +1,37 @@
 <template>
-  <Section class="topic">
-    <div class="topic__header">
-      <h2 class="topic__title">{{ post.post.fields.title }}</h2>
-      <p class="topic__date">{{ post.post.fields.date }}</p>
+  <Section>
+    <div class="topic">
+      <div class="topic__header">
+        <h2 class="topic__title">{{ post.post.fields.title }}</h2>
+        <p class="topic__date">{{ post.post.fields.date }}</p>
+      </div>
+      <!-- eslint-disable vue/no-v-html -->
+      <article
+        class="topic__content content"
+        v-html="$md.render(post.post.fields.body)"
+      />
+      <article class="topic__around">
+        <article v-if="nextPost.nextPost" class="-left">
+          <h3 class="topic__aroundTitle">← 次の記事</h3>
+          <Card
+            :id="nextPost.nextPost.sys.id"
+            :title="nextPost.nextPost.fields.title"
+            :date="nextPost.nextPost.fields.date"
+            :img="nextPost.nextPost.fields.headerImage"
+          />
+        </article>
+        <article v-if="previousPost.previousPost" class="-right">
+          <h3 class="topic__aroundTitle -r">前の記事 →</h3>
+          <Card
+            :id="previousPost.previousPost.sys.id"
+            :title="previousPost.previousPost.fields.title"
+            :date="previousPost.previousPost.fields.date"
+            :img="previousPost.previousPost.fields.headerImage"
+          />
+        </article>
+      </article>
+      <ReturnPage text="記事一覧へ" slug="/topics" />
     </div>
-    <!-- eslint-disable vue/no-v-html -->
-    <article
-      class="topic__content content"
-      v-html="$md.render(post.post.fields.body)"
-    />
-    <article class="topic__around">
-      <article v-if="nextPost.nextPost" class="-left">
-        <h3 class="topic__aroundTitle">← 次の記事</h3>
-        <Card
-          :id="nextPost.nextPost.sys.id"
-          :title="nextPost.nextPost.fields.title"
-          :date="nextPost.nextPost.fields.date"
-          :img="nextPost.nextPost.fields.headerImage"
-        />
-      </article>
-      <article v-if="previousPost.previousPost" class="-right">
-        <h3 class="topic__aroundTitle -r">前の記事 →</h3>
-        <Card
-          :id="previousPost.previousPost.sys.id"
-          :title="previousPost.previousPost.fields.title"
-          :date="previousPost.previousPost.fields.date"
-          :img="previousPost.previousPost.fields.headerImage"
-        />
-      </article>
-    </article>
-    <ReturnPage text="記事一覧へ" slug="/topics" />
   </Section>
 </template>
 
@@ -105,6 +107,7 @@ export default {
 .topic {
   width: $content-width;
   max-width: 90%;
+  margin: 0 auto;
 
   &__header {
     display: grid;
