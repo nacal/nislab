@@ -121,7 +121,6 @@ export default {
 
   &__title {
     font-size: 2rem;
-    font-weight: bold;
     word-break: keep-all;
   }
 
