@@ -110,11 +110,11 @@ export default {
     margin-bottom: 1rem;
     font-family: $font-set-en;
     font-size: 1.5rem;
-    font-weight: bold;
   }
 
   &__text {
     margin-bottom: 2rem;
+    font-weight: 300;
   }
 
   &__button {

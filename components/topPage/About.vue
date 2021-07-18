@@ -28,6 +28,7 @@ export default {}
     max-width: 90%;
     margin: 0 auto;
     margin-top: 8rem;
+    font-weight: 300;
 
     @include mq(sp) {
       margin-top: 4rem;
