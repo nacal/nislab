@@ -23,7 +23,7 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: process.env.BASE_URL,
+        content: process.env.NUXT_ENV_BASE_URL,
       },
       {
         hid: 'og:site_name',
@@ -43,7 +43,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: process.env.BASE_URL + 'nislab-ogp.png',
+        content: process.env.NUXT_ENV_BASE_URL + 'nislab-ogp.png',
       },
       {
         hid: 'twitter:card',
@@ -164,6 +164,6 @@ export default {
     },
   },
   publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL,
+    baseURL: process.env.NUXT_ENV_BASE_URL,
   },
 }
