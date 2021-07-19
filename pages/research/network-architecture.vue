@@ -1,6 +1,6 @@
 <template>
   <Section class="networkArchitecture">
-    <Title :title="`Network Architecture`" :sub-title="`ここどうしよ`" />
+    <Title :title="`Network`" :sub-title="`Network Architecture`" />
     <!-- eslint-disable vue/no-v-html -->
     <article class="networkArchitecture__content content">
       <div v-html="$md.render(body)" />
