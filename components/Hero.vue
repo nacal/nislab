@@ -24,15 +24,16 @@
 export default {
   data() {
     return {
-      images: ['hero1.jpg', 'hero2.jpg'],
+      images: ['IMG_1630.jpeg', 'Photo4.jpg', 'Photo3.jpg'],
       name: ['Network', 'Information', 'System', 'Laboratory'],
       swiperOption: {
         speed: 1000,
         autoplay: {
-          delay: 5000,
+          delay: 10000,
           disableOnInteraction: false,
         },
         loop: true,
+        effect: 'fade',
       },
     }
   },
@@ -53,7 +54,10 @@ export default {
     width: 100%;
     height: 100%;
     background-color: transparent;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.3) 35%, transparent 36%);
+    background-image: radial-gradient(
+      rgba(0, 0, 255, 0.3) 35%,
+      transparent 36%
+    );
     background-repeat: repeat;
     background-position: 0 0, 20px 20px;
     background-size: 3px 3px;
@@ -70,6 +74,10 @@ export default {
     height: 100%;
     object-fit: cover;
     object-position: 0 0;
+
+    @include mq(tab) {
+      object-position: 50% 50%;
+    }
   }
 
   &__title {
