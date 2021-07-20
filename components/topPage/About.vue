@@ -9,7 +9,7 @@
       Systems）の研究を行っています．モノの個体情報を識別したり，そのモノが置かれた周りの状況を把握したり，そのモノ自体を制御し，クラウドコンピューティングとの連携も考慮し，世界全体として飛躍的に安全性・効率性・利便性・持続可能性の高い情報化社会の実現を目指します．
     </p>
     <div class="about__button">
-      <MoreButton :link-to="`/education`" />
+      <MoreButton :link-to="`/research`" />
     </div>
   </Section>
 </template>
