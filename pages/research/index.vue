@@ -38,15 +38,10 @@ export default {
           description:
             'ITS（Intelligent Transport Systems：高度道路交通システム）とは，情報通信技術を用いて「人」と「道路」と「車両」を一体のシステムとして構築し，交通事故，渋滞，環境汚染などの道路交通の問題解決や運転支援，情報提供などの道路交通の利便性の向上を図るものです．当研究室では，主に交通流（走行調停），ダイナミックマップ，時空間グリッド予約，セキュリティに関する研究を行なっています．',
           link: '/research/its',
-          img: { src: require(`~/assets/images/Photo4.jpg`), alt: '' },
-        },
-        {
-          title: 'IoT',
-          subTitle: 'Internet of Things',
-          description:
-            'IoTとは「Internet of Things」の略であり，「モノのインターネット」と呼ばれており，従来インターネットに接続されていなかったモノ（家電製品，電子機器，車両など）がネットワークに接続することで，サーバやクラウド上でデータの処理，収集，分析が可能になります．当研究室では，車両に関してはもちろん，ホームネットワークやドローンなど，IoT技術について幅広く研究が行われています．',
-          link: '/research/iot',
-          img: { src: require(`~/assets/images/iot.png`), alt: '' },
+          img: {
+            src: require(`~/assets/images/Photo4.jpg`),
+            alt: 'ドライビングシュミレーター',
+          },
         },
         {
           title: 'Network',
@@ -55,8 +50,19 @@ export default {
             'インターネット上にはテキストや画像，動画だけでなく，コンピュータ同士の情報のやりとりなど，多様なトラフィックが流れ，その量は日々増加しています．このトラフィックを安定して収容するだけでなく，ユーザやサービスの様々なニーズに合わせて柔軟に対応できるネットワークアーキテクチャの実現が求められています．そのために，ネットワークプロトコルの効率化やネットワーク仮想化による動的なネットワーク制御などの研究を行っています．',
           link: '/research/network-architecture',
           img: {
-            src: require(`~/assets/images/KNishimura_SDN.png`),
-            alt: '',
+            src: require(`~/assets/images/IMG_1617.jpeg`),
+            alt: 'ホロレンズを装着する学生',
+          },
+        },
+        {
+          title: 'IoT',
+          subTitle: 'Internet of Things',
+          description:
+            'IoTとは「Internet of Things」の略であり，「モノのインターネット」と呼ばれており，従来インターネットに接続されていなかったモノ（家電製品，電子機器，車両など）がネットワークに接続することで，サーバやクラウド上でデータの処理，収集，分析が可能になります．当研究室では，車両に関してはもちろん，ホームネットワークやドローンなど，IoT技術について幅広く研究が行われています．',
+          link: '/research/iot',
+          img: {
+            src: require(`~/assets/images/IMG_1630.jpeg`),
+            alt: '研究室内を飛ぶドローン',
           },
         },
       ],
