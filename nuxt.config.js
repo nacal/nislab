@@ -17,7 +17,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: '同志社大学ネットワーク情報システム研究室',
+        content: '同志社大学 ネットワーク情報システム研究室',
       },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       {
@@ -166,4 +166,5 @@ export default {
   publicRuntimeConfig: {
     baseURL: process.env.NUXT_ENV_BASE_URL,
   },
+  loading: '~/components/Loading.vue',
 }

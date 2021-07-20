@@ -33,28 +33,31 @@ export default {
     return {
       researches: [
         {
-          title: 'IoT',
-          subTitle: 'Internet of Things',
-          description:
-            '私たちネットワーク情報システム研究室（佐藤研究室）は，身の回りの家電や自動車などの組込みシステムからスマートフォンやクラウドまで，モノのインターネット（IoT: Internet of Things）により現実世界と仮想世界を融合し，いつでも，どこでも，誰もが自由で安全に利用可能なコンピューティング環境を実現できる分散システム（Network & Distributed Systems）の研究を行っています．',
-          link: '/research/iot',
-          img: { src: '../../assets/images/hero1.jpg', alt: '' },
-        },
-        {
           title: 'ITS',
           subTitle: 'Intelligent Transport Systems',
           description:
-            '私たちネットワーク情報システム研究室（佐藤研究室）は，身の回りの家電や自動車などの組込みシステムからスマートフォンやクラウドまで，モノのインターネット（IoT: Internet of Things）により現実世界と仮想世界を融合し，いつでも，どこでも，誰もが自由で安全に利用可能なコンピューティング環境を実現できる分散システム（Network & Distributed Systems）の研究を行っています．',
+            'ITS（Intelligent Transport Systems：高度道路交通システム）とは，情報通信技術を用いて「人」と「道路」と「車両」を一体のシステムとして構築し，交通事故，渋滞，環境汚染などの道路交通の問題解決や運転支援，情報提供などの道路交通の利便性の向上を図るものです．当研究室では，主に交通流（走行調停），ダイナミックマップ，時空間グリッド予約，セキュリティに関する研究を行なっています．',
           link: '/research/its',
-          img: { src: '../../assets/images/hero1.jpg', alt: '' },
+          img: { src: require(`~/assets/images/Photo4.jpg`), alt: '' },
         },
         {
-          title: 'Network Architecture',
-          subTitle: '',
+          title: 'IoT',
+          subTitle: 'Internet of Things',
           description:
-            '私たちネットワーク情報システム研究室（佐藤研究室）は，身の回りの家電や自動車などの組込みシステムからスマートフォンやクラウドまで，モノのインターネット（IoT: Internet of Things）により現実世界と仮想世界を融合し，いつでも，どこでも，誰もが自由で安全に利用可能なコンピューティング環境を実現できる分散システム（Network & Distributed Systems）の研究を行っています．',
+            'IoTとは「Internet of Things」の略であり，「モノのインターネット」と呼ばれており，従来インターネットに接続されていなかったモノ（家電製品，電子機器，車両など）がネットワークに接続することで，サーバやクラウド上でデータの処理，収集，分析が可能になります．当研究室では，車両に関してはもちろん，ホームネットワークやドローンなど，IoT技術について幅広く研究が行われています．',
+          link: '/research/iot',
+          img: { src: require(`~/assets/images/iot.png`), alt: '' },
+        },
+        {
+          title: 'Network',
+          subTitle: 'Network Architecture',
+          description:
+            'インターネット上にはテキストや画像，動画だけでなく，コンピュータ同士の情報のやりとりなど，多様なトラフィックが流れ，その量は日々増加しています．このトラフィックを安定して収容するだけでなく，ユーザやサービスの様々なニーズに合わせて柔軟に対応できるネットワークアーキテクチャの実現が求められています．そのために，ネットワークプロトコルの効率化やネットワーク仮想化による動的なネットワーク制御などの研究を行っています．',
           link: '/research/network-architecture',
-          img: { src: '../../assets/images/hero1.jpg', alt: '' },
+          img: {
+            src: require(`~/assets/images/KNishimura_SDN.png`),
+            alt: '',
+          },
         },
       ],
     }
