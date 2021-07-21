@@ -21,9 +21,7 @@ export default {
   },
   mounted() {
     window.addEventListener('load', () => {
-      setTimeout(() => {
-        this.pageLoading = false
-      }, 1500)
+      this.pageLoading = false
     })
   },
 }
