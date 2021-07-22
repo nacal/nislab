@@ -13,31 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-
-      - run: yarn install --production
-
-      - run: yarn generate
-        env:
-          NUXT_ENV_CTF_ACCESS_TOKEN: ${{ secrets.NUXT_ENV_CTF_ACCESS_TOKEN }}
-          NUXT_ENV_SPACE_ID: ${{ secrets.NUXT_ENV_SPACE_ID }}
-          NUXT_ENV_BASE_URL: ${{ secrets.NUXT_ENV_BASE_URL }}
-
-      - run: tar -zcvf dist.tar.gz dist
-
       - run: echo "${{ secrets.SERVER_KEY }}" > aws_lightsail_key
 
       - run: chmod 600 ./aws_lightsail_key
 
-      - run: scp -o StrictHostKeyChecking=no -i ./aws_lightsail_key ./dist.tar.gz ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/html
+      - run: ssh -o StrictHostKeyChecking=no -i ./aws_lightsail_key ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "cd /var/www/html/nislab"
 
-      - run: ssh -o StrictHostKeyChecking=no -i ./aws_lightsail_key ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "cd /var/www/html && rm -f -r dist && tar -zxvf dist.tar.gz && rm dist.tar.gz"
-
-      - uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_ICON: https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2021-07-06/2257469713729_06357f0ef4a522dfb049_72.png
-          SLACK_USERNAME: NISLAB
-          SLACK_MESSAGE: 'NISLAB HP が更新されました！'
+      # - uses: rtCamp/action-slack-notify@v2
+      #   env:
+      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #     SLACK_ICON: https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2021-07-06/2257469713729_06357f0ef4a522dfb049_72.png
+      #     SLACK_USERNAME: NISLAB
+      #     SLACK_MESSAGE: 'NISLAB HP が更新されました！'
