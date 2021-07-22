@@ -24,7 +24,7 @@
     "contentful": "^8.4.2",
     "core-js": "^3.11.1",
     "markdown-it-link-attributes": "^3.0.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "^6.0.1",
     "nuxt": "^2.14.12",
     "sass-loader": "^10.1.0",
     "smoothscroll-polyfill": "^0.4.4",
