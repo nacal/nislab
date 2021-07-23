@@ -33,10 +33,12 @@
     </article>
     <article class="footer__sub">
       <div class="footer__siteLinks">
-        <nuxt-link to="privacy-policy" class="footer__siteLink"
+        <nuxt-link to="/privacy-policy" class="footer__siteLink"
           >プライバシーポリシー</nuxt-link
         >
-        <nuxt-link to="disclaimer" class="footer__siteLink">免責事項</nuxt-link>
+        <nuxt-link to="/disclaimer" class="footer__siteLink"
+          >免責事項</nuxt-link
+        >
       </div>
       <small class="footer__copy">&copy; 2021 NISLAB.</small>
     </article>

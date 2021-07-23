@@ -149,7 +149,7 @@ export default {
   generate: {
     fallback: true,
     routes() {
-      return client
+      const posts = client
         .getEntries({
           content_type: 'posts',
         })
@@ -161,6 +161,21 @@ export default {
             }
           })
         })
+      const publications = client
+        .getEntries({
+          content_type: 'publications',
+        })
+        .then((entries) => {
+          return entries.items.map((entry) => {
+            return {
+              route: `publications/${entry.fields.slug}`,
+              payload: entry,
+            }
+          })
+        })
+      return Promise.all([posts, publications]).then((values) => {
+        return [...values[0], ...values[1]]
+      })
     },
   },
   publicRuntimeConfig: {
