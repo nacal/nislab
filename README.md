@@ -100,7 +100,19 @@ cd /var/www/html/nislab/
 yarn generate
 ```
 
-### 7. TLS (HTTPS) 化
+### 7. Redirect 設定
+
+元々、 `https://nislab.doshisha.ac.jp/class` には佐藤先生が授業で利用するファイル群が保管されていましたが、 <http://cs.nislab.io/class> に移設しました。
+
+そこで、元々のURLを叩いた時にリダイレクトされるように設定します。
+
+```sh
+# /etc/httpd/conf/httpd.conf
+
++ Redirect/classhttp://cs.nislab.io/class
+```
+
+### 8. TLS (HTTPS) 化
 
 > <https://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html>
 
