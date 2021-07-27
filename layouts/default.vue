@@ -12,7 +12,7 @@
 
 <script>
 import { Header, Footer } from '~/components/layouts/index'
-import { GlobalNav } from '~/components/Nav/index'
+import { GlobalNav } from '~/components/common/index'
 
 export default {
   components: {

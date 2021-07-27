@@ -13,7 +13,7 @@
 <script>
 import { mapMutations } from 'vuex'
 import { Nislab } from '~/components/assets/index'
-import { Nav } from '~/components/nav/index'
+import { Nav } from '~/components/common/index'
 
 export default {
   components: {
