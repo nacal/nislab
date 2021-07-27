@@ -11,13 +11,14 @@
 </template>
 
 <script>
-import { Header, Footer } from '~/components/layouts/index'
+import { Header, Footer, ReturnTop } from '~/components/layouts/index'
 import { GlobalNav } from '~/components/common/index'
 
 export default {
   components: {
     Header,
     Footer,
+    ReturnTop,
     GlobalNav,
   },
   data() {
