@@ -54,8 +54,7 @@ export default {
     link: [
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,700|Quicksand:400,700&display=swap&subset=japanese',
+        href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,700|Quicksand:400,700&display=swap&subset=japanese',
       },
       {
         rel: 'apple-touch-icon',
