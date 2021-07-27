@@ -46,7 +46,16 @@
 </template>
 
 <script>
+import { Cards } from '~/components/common/index'
+import { Section, Title, MoreButton } from '~/components/utility/index'
+
 export default {
+  components: {
+    Cards,
+    Section,
+    Title,
+    MoreButton,
+  },
   data() {
     return {
       images: ['IMG_1630.jpeg', 'Photo4.jpg', 'Photo3.jpg'],

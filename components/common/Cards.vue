@@ -14,7 +14,12 @@
 </template>
 
 <script>
+import { Card } from '~/components/common/index'
+
 export default {
+  components: {
+    Card,
+  },
   props: {
     number: {
       type: Number,

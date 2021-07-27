@@ -14,10 +14,18 @@
 </template>
 
 <script>
+import { PublicationsList } from '~/components/common/index'
+import { Section, Title, ReturnPage } from '~/components/utility/index'
 import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 
 export default {
+  components: {
+    PublicationsList,
+    Section,
+    Title,
+    ReturnPage,
+  },
   async asyncData({ params }) {
     const publication = await client
       .getEntries({

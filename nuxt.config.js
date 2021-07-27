@@ -180,5 +180,5 @@ export default {
   publicRuntimeConfig: {
     baseURL: process.env.NUXT_ENV_BASE_URL,
   },
-  loading: '~/components/Loading.vue',
+  loading: '~/components/utility/Loading.vue',
 }

@@ -14,7 +14,12 @@
 </template>
 
 <script>
+import { Section } from '~/components/utility/index'
+
 export default {
+  components: {
+    Section,
+  },
   computed: {
     publications() {
       return this.$store.state.publications

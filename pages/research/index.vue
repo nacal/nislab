@@ -28,7 +28,20 @@
 </template>
 
 <script>
+import {
+  Section,
+  Title,
+  MoreButton,
+  ReturnPage,
+} from '~/components/utility/index'
+
 export default {
+  components: {
+    Section,
+    Title,
+    MoreButton,
+    ReturnPage,
+  },
   data() {
     return {
       researches: [

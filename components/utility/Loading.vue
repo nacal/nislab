@@ -3,7 +3,7 @@
     <transition name="pageLoading">
       <div v-show="pageLoading" class="pageLoading">
         <img
-          src="../static/apple-touch-icon.png"
+          src="~/static/apple-touch-icon.png"
           alt="NISLAB"
           class="pageLoading__img"
         />
