@@ -106,7 +106,14 @@
 </template>
 
 <script>
+import { Section, Title, ReturnPage } from '~/components/utility/index'
+
 export default {
+  components: {
+    Section,
+    Title,
+    ReturnPage,
+  },
   head() {
     return {
       title: 'プライバシーポリシー | NISLAB',

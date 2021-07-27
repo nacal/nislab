@@ -36,10 +36,18 @@
 </template>
 
 <script>
+import { Section, ReturnPage } from '~/components/utility/index'
+import { Card } from '~/components/common/index'
+
 import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 
 export default {
+  components: {
+    Section,
+    Card,
+    ReturnPage,
+  },
   async asyncData({ params }) {
     const post = await client
       .getEntry(params.topic)

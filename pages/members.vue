@@ -8,10 +8,16 @@
 </template>
 
 <script>
+import { Section, Title, ReturnPage } from '~/components/utility/index'
 import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 
 export default {
+  components: {
+    Section,
+    Title,
+    ReturnPage,
+  },
   async asyncData() {
     return await client
       .getEntries({

@@ -11,7 +11,16 @@
 </template>
 
 <script>
+import { Header, Footer, ReturnTop } from '~/components/layouts/index'
+import { GlobalNav } from '~/components/common/index'
+
 export default {
+  components: {
+    Header,
+    Footer,
+    ReturnTop,
+    GlobalNav,
+  },
   data() {
     return {
       lowerPage: false,

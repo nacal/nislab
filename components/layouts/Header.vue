@@ -13,10 +13,12 @@
 <script>
 import { mapMutations } from 'vuex'
 import { Nislab } from '~/components/assets/index'
+import { Nav } from '~/components/common/index'
 
 export default {
   components: {
     Nislab,
+    Nav,
   },
   data() {
     return {
@@ -27,19 +29,6 @@ export default {
   methods: {
     ...mapMutations(['close']),
   },
-  // mounted() {
-  //   window.addEventListener('scroll', this.scrollWindow)
-  // },
-  // methods: {
-  //   scrollWindow() {
-  //     this.scroll = window.scrollY
-  //     if (this.scroll > 0) {
-  //       this.scrolledLayout = true
-  //     } else {
-  //       this.scrolledLayout = false
-  //     }
-  //   },
-  // },
 }
 </script>
 
