@@ -4,6 +4,15 @@
   </div>
 </template>
 
+<script>
+import { Nav } from '~/components/common/index'
+export default {
+  components: {
+    Nav,
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .globalNav {
   position: fixed;

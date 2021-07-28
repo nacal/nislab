@@ -14,11 +14,13 @@
 import { mapMutations } from 'vuex'
 import { Nislab } from '~/components/assets/index'
 import { Nav } from '~/components/common/index'
+import { Hamburger } from '~/components/utility/index'
 
 export default {
   components: {
     Nislab,
     Nav,
+    Hamburger,
   },
   data() {
     return {
