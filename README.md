@@ -213,7 +213,7 @@ HP の更新が完了すると、 Slack に通知が届くようになってい�
 
 ## Nuxt.js を編集したい方向け
 
-## Create `.env` File
+### Create `.env` File
 
 ```.env
 NUXT_ENV_SPACE_ID=""
@@ -221,7 +221,7 @@ NUXT_ENV_CTF_ACCESS_TOKEN=""
 NUXT_ENV_BASE_URL=""
 ```
 
-## Build Setup
+### Build Setup
 
 ```bash
 # install dependencies
@@ -234,3 +234,47 @@ $ yarn dev
 # $ yarn build
 # $ yarn start
 ```
+
+### ディレクトリ構成
+基本的なディレクトリ構成は[公式ドキュメント](https://ja.nuxtjs.org/docs/2.x/get-started/directory-structure)を参考にしてください。
+以下に編集が必要になる可能性があるものを抜粋します。
+
+```bash
+├── assets
+│   ├── _sass # グローバルCSS
+│   └── images # 画像ファイル
+├── components
+│   ├── assets # SVG画像
+│   ├── common # 一般的なコンポーネント
+│   ├── layout # レイアウト関係
+│   └── utility # 汎用コンポーネント
+├── layout # レイアウト用
+├── pages # 各ページ
+└── static # 外部から読み込む可能性のある画像等
+```
+
+### スタイルの編集
+グローバルCSS及び各コンポーネントやページでのscoped cssはSass(SCSS)で記述しています。
+
+#### グローバルCSS
+assets/_sass内ではサイト全体で必要なスタイリングなどを行なっています。以下に各ファイルの詳細を記述します。
+
+``` bash
+├── foundation
+│   ├── mixin
+│   │   ├── _fontsize.scss # フォントサイズ設定用mixin
+│   │   └── _media-query.scss # メディアクエリ用mixin
+│   ├── _base.scss # サイトのベース&contentful記事用
+│   ├── _function.scss # 関数登録用
+│   ├── _reset.scss # ブラウザのスタイルリセット用
+│   └── _setting.scss # カラーやコンテンツ幅などの設定用
+└── common.scss # import用
+```
+
+基本的にページ全体に関するスタイルの変更を行いたい場合にはこれらを編集してください。大体は_base.scssか_setting.scssになると思います。
+
+#### scoped css
+各コンポーネント及びページのスタイリングは各ファイル内でscopedとして記述しています。スタイルが必要な際にはそれらを編集してください。一応BEMっぽい設計になっています。
+
+### コンテンツの編集
+Webサイトのコンテンツを編集したい際は基本的にcomponentsかpagesの中から必要なものを見つけ編集してください。各記事、研究業績などのcontentfulで管理しているものに関してはcontentfulから直接変更を行なってください。
