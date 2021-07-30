@@ -51,6 +51,16 @@ export default {
         content: 'summary_large_image',
       },
     ],
+    script: [
+      {
+        async: true,
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-NDLRBPBQJZ',
+      },
+      {
+        innerHTML: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NDLRBPBQJZ');`,
+      },
+    ],
+    __dangerouslyDisableSanitizers: ['script'],
     link: [
       {
         rel: 'stylesheet',
