@@ -57,10 +57,9 @@ export default {
         src: 'https://www.googletagmanager.com/gtag/js?id=G-NDLRBPBQJZ',
       },
       {
-        innerHTML: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NDLRBPBQJZ');`,
+        src: '/static/gtag.js',
       },
     ],
-    __dangerouslyDisableSanitizers: ['script'],
     link: [
       {
         rel: 'stylesheet',
