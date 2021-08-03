@@ -51,6 +51,15 @@ export default {
         content: 'summary_large_image',
       },
     ],
+    script: [
+      {
+        async: true,
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-NDLRBPBQJZ',
+      },
+      {
+        src: '/static/gtag.js',
+      },
+    ],
     link: [
       {
         rel: 'stylesheet',
