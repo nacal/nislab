@@ -1,0 +1,11 @@
+version: '3'
+services:
+  nislab:
+    image: node:lts
+    command: sleep infinity
+    ports:
+      - 3000:3000
+    volumes:
+      - ../:/myapp/nislab:cached
+      - /myapp/nislab/node_modules
+      - /myapp/nislab/.next

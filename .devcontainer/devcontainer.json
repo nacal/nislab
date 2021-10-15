@@ -1,0 +1,19 @@
+{
+  "name": "nislab",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "nislab",
+  "workspaceFolder": "/myapp/nislab",
+  "settings": {},
+  "extensions": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "oderwat.indent-rainbow",
+    "esbenp.prettier-vscode",
+    "octref.vetur"
+  ]
+  // "forwardPorts": [],
+  // "runServices": [],
+  // "shutdownAction": "none",
+  // "postCreateCommand": "apt-get update && apt-get install -y curl",
+  // "remoteUser": "vscode"
+}
