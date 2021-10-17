@@ -4,8 +4,10 @@ services:
     image: node:lts
     command: sleep infinity
     ports:
-      - 3000:3000
+      - 8080:8080
     volumes:
       - ../:/myapp/nislab:cached
       - /myapp/nislab/node_modules
-      - /myapp/nislab/.next
+      - /myapp/nislab/.nuxt
+    environment:
+      - CHOKIDAR_USEPOLLING=true
