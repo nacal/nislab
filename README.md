@@ -109,7 +109,8 @@ yarn generate
 ```sh
 # /etc/httpd/conf/httpd.conf
 
-+ Redirect/classhttp://cs.nislab.io/class
+# ファイル末尾への追加でOKです。
++ Redirect /class http://cs.nislab.io/class
 ```
 
 ### 8. TLS (HTTPS) 化
