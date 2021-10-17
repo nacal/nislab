@@ -9,7 +9,9 @@
     "dbaeumer.vscode-eslint",
     "oderwat.indent-rainbow",
     "esbenp.prettier-vscode",
-    "octref.vetur"
+    "octref.vetur",
+    "formulahendry.auto-rename-tag",
+    "coenraads.bracket-pair-colorizer-2"
   ]
   // "forwardPorts": [],
   // "runServices": [],
