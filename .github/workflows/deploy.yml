@@ -23,5 +23,5 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_ICON: https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2021-07-06/2257469713729_06357f0ef4a522dfb049_72.png
-          SLACK_USERNAME: NISLAB
-          SLACK_MESSAGE: 'NISLAB HP が更新されました！'
+          SLACK_USERNAME: 'NISLAB GitHub Actions'
+          SLACK_MESSAGE: 'GitHub Actions が完了し、 NISLAB HP が更新されました！'
