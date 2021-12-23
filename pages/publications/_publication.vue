@@ -9,7 +9,10 @@
       </article>
       <ReturnPage />
     </Section>
-    <PublicationsList />
+    <Section :bg="`#eee`">
+      <h3 class="publications__listTitle">研究業績一覧</h3>
+      <PublicationsList />
+    </Section>
   </article>
 </template>
 
@@ -82,14 +85,10 @@ export default {
     margin: 4rem auto 0;
   }
 
-  &__links {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 1.5rem;
-    justify-items: center;
-    width: $content-width;
-    max-width: 90%;
-    margin: 0 auto;
+  &__listTitle {
+    margin-bottom: 2.5rem;
+    font-size: 1.25rem;
+    text-align: center;
   }
 }
 </style>

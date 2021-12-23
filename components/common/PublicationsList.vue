@@ -1,25 +1,17 @@
 <template>
-  <Section :bg="`#eee`">
-    <h3 class="publicationsList__title">研究業績一覧</h3>
-    <ul class="publicationsList__links">
-      <li v-for="(publication, index) in publications" :key="index">
-        <nuxt-link
-          :to="`/publications/${publication.fields.slug}`"
-          class="publicationsList__link"
-          >{{ publication.fields.title }}</nuxt-link
-        >
-      </li>
-    </ul>
-  </Section>
+  <ul class="publicationsList__links">
+    <li v-for="(publication, index) in publications" :key="index">
+      <nuxt-link
+        :to="`/publications/${publication.fields.slug}`"
+        class="publicationsList__link"
+        >{{ publication.fields.title }}</nuxt-link
+      >
+    </li>
+  </ul>
 </template>
 
 <script>
-import { Section } from '~/components/utility/index'
-
 export default {
-  components: {
-    Section,
-  },
   computed: {
     publications() {
       return this.$store.state.publications
@@ -30,12 +22,6 @@ export default {
 
 <style lang="scss" scoped>
 .publicationsList {
-  &__title {
-    margin-bottom: 2.5rem;
-    font-size: 1.25rem;
-    text-align: center;
-  }
-
   &__links {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
