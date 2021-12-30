@@ -13,6 +13,13 @@
           :aria-label="`${item}ページに遷移する`"
           >{{ item }}</nuxt-link
         >
+        <div class="nav__spacer" />
+        <ul class="nav__dropdown">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
       </li>
     </ul>
   </nav>
@@ -45,16 +52,36 @@ export default {
 .nav {
   &__list {
     display: flex;
+    height: 1.5em;
 
     @include mq(desk) {
       flex-direction: column;
       align-items: center;
+      height: auto;
       color: #fff;
 
       a:hover {
         color: #dedede;
         transition: 0.3s;
       }
+    }
+  }
+
+  &__spacer {
+    height: 1.35rem;
+  }
+
+  &__dropdown {
+    height: 0;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    background-color: $main-color;
+    border-radius: 0 0 12px 12px;
+    transition: 0.2s;
+
+    @include mq(desk) {
+      display: none;
     }
   }
 
@@ -71,6 +98,12 @@ export default {
         margin-top: 1.5rem;
         margin-left: 0;
       }
+    }
+
+    &:hover .nav__dropdown {
+      height: auto;
+      padding: 1rem;
+      transition: 0.3s;
     }
   }
 
