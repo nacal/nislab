@@ -8,11 +8,26 @@
         @click="close()"
       >
         <nuxt-link
-          :to="`/${item}`"
+          :to="`/${item.name}`"
           class="nav__link"
-          :aria-label="`${item}ページに遷移する`"
-          >{{ item }}</nuxt-link
+          :aria-label="`${item.name}ページに遷移する`"
+          >{{ item.name }}</nuxt-link
         >
+        <div class="nav__spacer" />
+        <ul v-if="item.children" class="nav__dropdown">
+          <li
+            v-for="(children, childrenIndex) in item.children"
+            :key="childrenIndex"
+            class="nav__dropdownItem"
+          >
+            <nuxt-link
+              :to="`/${item.name}/${children.path}`"
+              class="nav__link -reverce"
+              :aria-label="`${children.name}ページに遷移する`"
+              >{{ children.name }}</nuxt-link
+            >
+          </li>
+        </ul>
       </li>
     </ul>
   </nav>
@@ -25,13 +40,49 @@ export default {
   data() {
     return {
       navItems: [
-        'research',
-        'topics',
-        'advisor',
-        'education',
-        'publications',
-        'members',
-        'contact',
+        {
+          name: 'research',
+          children: [
+            {
+              name: 'ITS',
+              path: 'its',
+            },
+            {
+              name: 'Network',
+              path: 'network-architecture',
+            },
+            {
+              name: 'IoT',
+              path: 'iot',
+            },
+          ],
+        },
+        { name: 'topics' },
+        { name: 'advisor' },
+        { name: 'education' },
+        {
+          name: 'publications',
+          children: [
+            {
+              name: '2021年度',
+              path: '2021',
+            },
+            {
+              name: '2020年度',
+              path: '2020',
+            },
+            {
+              name: '2019年度',
+              path: '2019',
+            },
+            {
+              name: '2018年度',
+              path: '2018',
+            },
+          ],
+        },
+        { name: 'members' },
+        { name: 'contact' },
       ],
     }
   },
@@ -45,16 +96,43 @@ export default {
 .nav {
   &__list {
     display: flex;
+    height: 1.5em;
 
     @include mq(desk) {
       flex-direction: column;
       align-items: center;
+      height: auto;
       color: #fff;
 
       a:hover {
         color: #dedede;
         transition: 0.3s;
       }
+    }
+  }
+
+  &__spacer {
+    height: 1.35rem;
+  }
+
+  &__dropdown {
+    height: 0;
+    overflow: hidden;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    background-color: $main-color;
+    border-radius: 0 0 12px 12px;
+    transition: 0.2s;
+
+    @include mq(desk) {
+      display: none;
+    }
+  }
+
+  &__dropdownItem {
+    & + & {
+      padding-top: 1rem;
     }
   }
 
@@ -72,6 +150,12 @@ export default {
         margin-left: 0;
       }
     }
+
+    &:hover .nav__dropdown {
+      height: auto;
+      padding: 1rem 0;
+      transition: 0.3s;
+    }
   }
 
   &__link {
@@ -81,6 +165,10 @@ export default {
 
     &:hover {
       color: #666;
+    }
+
+    &:hover.-reverce {
+      color: #ddd;
     }
 
     &::after {
